@@ -261,7 +261,7 @@ $\Delta$ un axe fixe, $\mathcal{D} \in \Delta$, $O, O', M$ des points de l'espac
     \caption{Formules relatives aux référentiels non inertiels.}
     \label{tab:ref_non_inertiel}
 \end{table}
-\newpage
+
 
 \begin{table}[ht]
     \centering
@@ -290,7 +290,7 @@ $\Delta$ un axe fixe, $\mathcal{D} \in \Delta$, $O, O', M$ des points de l'espac
 \caption{Formules énergiétiques.}
 \label{tab:energetique}
 \end{table}
-\newpage
+
 
 \begin{table}[ht]
     \centering
@@ -330,7 +330,7 @@ $\Delta$ un axe fixe, $\mathcal{D} \in \Delta$, $O, O', M$ des points de l'espac
 \caption{Formules électromagnétique.}
 \label{tab:electromag}
 \end{table}
-\newpage
+
 
 \begin{table}[ht]
     \centering
@@ -355,10 +355,36 @@ $\Delta$ un axe fixe, $\mathcal{D} \in \Delta$, $O, O', M$ des points de l'espac
     Vecteur de Poynting & $\vec{\Pi} = \dfrac{\vec{E} \wedge \vec{B}}{\mu_0}$ \\ 
     \bottomrule
 \end{tabular}
-\caption{Formules d'énergie électromagnétique.}
-\label{tab:electromag_energie}
+\caption{Energie éléctromagnétique}
+\label{tab:elec_energie}
 \end{table}
-\newpage
+
+
+On se limite à des signaux lentements variables (En basse fréquence)
+
+\begin{table}[ht]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Increase row spacing
+    \setlength{\tabcolsep}{8pt} % Adjust column padding
+    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
+        \toprule
+        \multicolumn{2}{c}{\textbf{Ondes éléctromagnétiques dans les conducteurs Ohmiques}} \\
+        \midrule
+        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
+        \midrule
+        Approximation basse fréquence & $\tau\omega \ll 1, \ \dfrac{\omega\varepsilon_0}{\gamma_0}\ll1$ \\ 
+        Ordre de grandeur de $\omega$ pour le cuivre à $\num{100} \unit{\kelvin}$ & $\num{10e14} \unit{\radian\per\second}$ \\
+        Cette approximation est vérifiée lorsque (Radiofréquences) & $\omega \ll \num{10e14}\unit{\radian\per\second}$ \\
+        Radiofréquences: & $f \lesssim \num{10e9}\unit{\Hz}$ \\
+        Équations de Maxwell dans l'ARQS & $\begin{matrix}(MG): \div \vec{E} = 0 & (MF): \rot\vec{E} = -\dpv{\vec{B}}{t} \\ (MT): \div \vec{B} = 0 & (MA): \rot \vec{B} = \mu_0\gamma_0\vec{E}\end{matrix}$ \\
+        Relation de dispertion (Obtenue en injectant (MF) dans (MA))& $\underline{k}^2 = -i\mu_0\gamma_0\omega$ \\
+        Expression du champ éléctrique & $\vec{E}(M,t )=\vec{E_0}e^{-\frac{u}{\delta}}\cos\left(\omega t - \dfrac{u}{\delta} + \Phi\right)$ \\
+    \bottomrule
+\end{tabular}
+\caption{Ondes éléctromagnétiques dans les conducteurs Ohmiques}
+\label{tab:ohm_elec}
+\end{table}
+
 
 \begin{table}[ht]
     \centering
@@ -392,7 +418,7 @@ $\Delta$ un axe fixe, $\mathcal{D} \in \Delta$, $O, O', M$ des points de l'espac
 \label{tab:ondes}
 \end{table}
 
-\newpage
+
 \begin{table}[ht]
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
@@ -428,7 +454,7 @@ $\Delta$ un axe fixe, $\mathcal{D} \in \Delta$, $O, O', M$ des points de l'espac
 \end{table}
 
 
-\newpage
+
 \begin{table}[ht]
     \centering
     Avec $j$ l'unité complexe de partie imaginaire positive. $\left(j^2 = -1, \Im(j)=1\right)$. On pose $x = \dfrac{\omega}{\omega_0}$
@@ -454,7 +480,7 @@ $\Delta$ un axe fixe, $\mathcal{D} \in \Delta$, $O, O', M$ des points de l'espac
 \label{tab:filtrage}
 \end{table}
 
-\newpage
+
 \begin{table}[ht]
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
@@ -481,7 +507,7 @@ $\Delta$ un axe fixe, $\mathcal{D} \in \Delta$, $O, O', M$ des points de l'espac
 \label{tab:packonde}
 \end{table}
 
-\newpage
+
 \begin{table}[ht]
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
