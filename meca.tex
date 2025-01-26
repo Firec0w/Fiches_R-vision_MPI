@@ -8,7 +8,7 @@
 
 % Geometry settings
 \usepackage[
-    left=0cm, right=0cm, top=2cm, bottom=2cm,
+    left=1cm, right=1cm, top=2cm, bottom=2cm,
     headheight=10mm, includehead
 ]{geometry}
 
@@ -58,6 +58,10 @@
 \postauthor{\end{center}}
 \predate{\begin{center}\small}
 \postdate{\end{center}}
+
+% Correct bug with tables
+\usepackage{flafter}
+\usepackage{float}
 
 % Additional settings
 \setlength{\parskip}{0.5\baselineskip} % Adjust space between paragraphs
@@ -226,14 +230,18 @@
 
 \fancyhead{}
 \pagestyle{fancy}
-\fancyhead[HL]{}
-\fancyhead[HC]{Formulaire de mécanique}
+\fancyhead[HL]{Section \thesection}
+\fancyhead[HC]{Formulaire de Physique}
 \fancyhead[HR]{MPI*}
 \begin{center}
 
+\tableofcontents
+
+\section{Mécanique}
+
 $\Delta$ un axe fixe, $\mathcal{D} \in \Delta$, $O, O', M$ des points de l'espace, et $H \in \Delta$ le un projeté orthogonal de $M$ sur $\Delta$
 
-\begin{table}[ht]
+\begin{table}[H]
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
@@ -263,7 +271,7 @@ $\Delta$ un axe fixe, $\mathcal{D} \in \Delta$, $O, O', M$ des points de l'espac
 \end{table}
 
 
-\begin{table}[ht]
+\begin{table}[H]
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
@@ -292,7 +300,69 @@ $\Delta$ un axe fixe, $\mathcal{D} \in \Delta$, $O, O', M$ des points de l'espac
 \end{table}
 
 
-\begin{table}[ht]
+\section{Ondes}
+
+\begin{table}[H]
+    \centering
+    Avec $u$ une coordonnée de l'espace ($u = ax + by + cz$), et $\vec{r} = \vec{e_x} + \vec{e_y} + \vec{e_z}$
+    \renewcommand{\arraystretch}{1.5} % Increase row spacing
+    \setlength{\tabcolsep}{8pt} % Adjust column padding
+    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
+        \toprule
+        \multicolumn{2}{c}{\textbf{Formules: Les ondes}} \\
+        \midrule
+        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
+        \midrule
+    D'Alembertien & $\square  \varPsi = \Delta \varPsi - \dfrac{1}{v^2}\ddpv{\varPsi}{t}$ \\ 
+    Équation de D'Alembert & $\square \varPsi = 0$ \\ 
+    Cas 1D & $\square \varPsi = \ddpv{\varPsi}{u} - \dfrac{1}{v^2}\ddpv{\varPsi}{t} = 0$, avec $u = \alpha x + \beta y + \gamma z$ \\ 
+    Surface d'onde & Points $M$ à $t$ fixé tel que $\varPsi(M, t) = \constant$ \\ 
+    Solutions de l'EDA 1D & $\varPsi(u, t) = f(u-tv) + g(u + vt)$ ou $f(t - \frac{u}{v}) + g(t + \frac{u}{v})$ \\ 
+    Pour $\varPsi$ solution de l'EDA 1D & Avec $a(u) = \varPsi(u, 0)$ et $b(u) = \dpv{\varPsi}{t}(u,0) = b(u)$ \\ 
+    On a & $\displaystyle\varPsi(u, t) = \dfrac{1}{2}\left(a(u-vt) + a(u+vt) + \dfrac{1}{v} \int_{u-vt}^{u+vt}b(s)\d s\right)$ \\
+    Onde progressive monochromatique & $\varPsi(u, t) = \varPsi_0\cos\left(\omega t \pm ku + \phi\right) = \varPsi_0\cos\left(\omega\left(t\pm \frac{u}{v}\right) + \phi\right)$ \\
+    Vecteur d'onde & $\vec{k} = k\vec{e_u}$ \\
+    Norme du vecteur d'onde & $\|\vec{k}\| = k(\omega) = \dfrac{\omega}{v} = \vec{r} \cdot \vec{k}$ \\
+    Longueur d'onde & $\lambda = T^{-1} = \dfrac{2\pi}{k}$ (car $k(u+\lambda) = ku + 2\pi$)\\
+    Célérité d'une onde dans la matière & $v_{\text{mat}} = \sqrt{\dfrac{Ka^2}{m}} =\sqrt{\dfrac{E}{\rho}}$ Avec $E = \dfrac{K}{a}$ le module de Young et $\rho$ sa masse volumique. \\ 
+    Célérité d'une onde dans une corde & $v_{\text{corde}} = \sqrt{\dfrac{T}{\mu_0}}$ Avec $T$ la tension et $\mu_0$ la masse linéique\\
+    Ondes stationnaires & $\varPsi(u, t) = \gamma{(t)}\phi{(u)}$ \\
+    Sur une corde de longueur $L$, & $y_n(x,t) = \left[a_n\cos\left(\dfrac{n\pi v}{L}t\right) + b_n\sin\left(\dfrac{n\pi v}{L} t\right)\right]\sin\left(\dfrac{n\pi v}{L}\right)$\\
+    \bottomrule
+\end{tabular}
+\caption{Formules: Les Ondes}
+\label{tab:ondes}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Increase row spacing
+    \setlength{\tabcolsep}{8pt} % Adjust column padding
+    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
+        \toprule
+        \multicolumn{2}{c}{\textbf{Paquets d'ondes}} \\
+        \midrule
+        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
+        \midrule
+        EDA: & $\ddpv{\theta}{t}=v^2\ddpv{\theta}{x}-\dfrac{1}{\tau}\dpv{\theta}{t}-\omega_0^2\theta$ \\
+        Forme recherchée: & $\underline{\theta}(x,t)=\underline{\theta}_0e^{i(\omega t-kx)}$\\
+        Reformulation de l'EDA: & $-\omega^2\theta=v^2k^2\theta-\dfrac{1}{\tau}i\omega\theta-\omega_0\theta$\\
+        Relation de dispertion: ($\theta\neq0$) & $\dfrac{\omega_0^2-\omega^2}{v^2}+\dfrac{1}{v^2\tau}i\omega=k^2$\\
+        Vecteur d'onde complexe: & $\underline{k}=k'-ik ''$\\
+        Forme de l'onde: & $\underline{\theta}(x,t)=\underline{\theta}_0e^{-k''x}e^{i(\omega t-kx)}$\\
+        Vitesse de phase: & $v_{\varphi}=\dfrac{\omega}{k}$ \\
+        Distance caracteristique d'atténuation & $\dfrac{1}{|k''(\omega)|}$ \\
+        Klein Gordon (Limite $\omega_0 \ll 1$) & $\underline{k}^2=\dfrac{\omega_0^2-\omega^2}{v^2}$ \\
+        Vitesse de groupe & $v_g=\dv{\omega}{k}=\dfrac{1}{\dv{k}{\omega}}$ \\
+    \bottomrule
+\end{tabular}
+\caption{Paquets d'onde}
+\label{tab:packonde}
+\end{table}
+
+\section{Éléctromagnétique}
+
+\begin{table}[H]
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
@@ -333,7 +403,7 @@ $\Delta$ un axe fixe, $\mathcal{D} \in \Delta$, $O, O', M$ des points de l'espac
 \end{table}
 
 
-\begin{table}[ht]
+\begin{table}[H]
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
@@ -363,7 +433,7 @@ $\Delta$ un axe fixe, $\mathcal{D} \in \Delta$, $O, O', M$ des points de l'espac
 
 On se limite à des signaux lentements variables (En basse fréquence)
 
-\begin{table}[ht]
+\begin{table}[H]
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
@@ -401,83 +471,14 @@ On se limite à des signaux lentements variables (En basse fréquence)
 \end{table}
 
 
-\begin{table}[ht]
-    \centering
-    Avec $u$ une coordonnée de l'espace ($u = ax + by + cz$), et $\vec{r} = \vec{e_x} + \vec{e_y} + \vec{e_z}$
-    \renewcommand{\arraystretch}{1.5} % Increase row spacing
-    \setlength{\tabcolsep}{8pt} % Adjust column padding
-    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
-        \toprule
-        \multicolumn{2}{c}{\textbf{Formules: Les ondes}} \\
-        \midrule
-        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
-        \midrule
-    D'Alembertien & $\square  \varPsi = \Delta \varPsi - \dfrac{1}{v^2}\ddpv{\varPsi}{t}$ \\ 
-    Équation de D'Alembert & $\square \varPsi = 0$ \\ 
-    Cas 1D & $\square \varPsi = \ddpv{\varPsi}{u} - \dfrac{1}{v^2}\ddpv{\varPsi}{t} = 0$, avec $u = \alpha x + \beta y + \gamma z$ \\ 
-    Surface d'onde & Points $M$ à $t$ fixé tel que $\varPsi(M, t) = \constant$ \\ 
-    Solutions de l'EDA 1D & $\varPsi(u, t) = f(u-tv) + g(u + vt)$ ou $f(t - \frac{u}{v}) + g(t + \frac{u}{v})$ \\ 
-    Pour $\varPsi$ solution de l'EDA 1D & Avec $a(u) = \varPsi(u, 0)$ et $b(u) = \dpv{\varPsi}{t}(u,0) = b(u)$ \\ 
-    On a & $\displaystyle\varPsi(u, t) = \dfrac{1}{2}\left(a(u-vt) + a(u+vt) + \dfrac{1}{v} \int_{u-vt}^{u+vt}b(s)\d s\right)$ \\
-    Onde progressive monochromatique & $\varPsi(u, t) = \varPsi_0\cos\left(\omega t \pm ku + \phi\right) = \varPsi_0\cos\left(\omega\left(t\pm \frac{u}{v}\right) + \phi\right)$ \\
-    Vecteur d'onde & $\vec{k} = k\vec{e_u}$ \\
-    Norme du vecteur d'onde & $\|\vec{k}\| = k(\omega) = \dfrac{\omega}{v} = \vec{r} \cdot \vec{k}$ \\
-    Longueur d'onde & $\lambda = T^{-1} = \dfrac{2\pi}{k}$ (car $k(u+\lambda) = ku + 2\pi$)\\
-    Célérité d'une onde dans la matière & $v_{\text{mat}} = \sqrt{\dfrac{Ka^2}{m}} =\sqrt{\dfrac{E}{\rho}}$ Avec $E = \dfrac{K}{a}$ le module de Young et $\rho$ sa masse volumique. \\ 
-    Célérité d'une onde dans une corde & $v_{\text{corde}} = \sqrt{\dfrac{T}{\mu_0}}$ Avec $T$ la tension et $\mu_0$ la masse linéique\\
-    Ondes stationnaires & $\varPsi(u, t) = \gamma{(t)}\phi{(u)}$ \\
-    Sur une corde de longueur $L$, & $y_n(x,t) = \left[a_n\cos\left(\dfrac{n\pi v}{L}t\right) + b_n\sin\left(\dfrac{n\pi v}{L} t\right)\right]\sin\left(\dfrac{n\pi v}{L}\right)$\\
-    \bottomrule
-\end{tabular}
-\caption{Formules: Les Ondes}
-\label{tab:ondes}
-\end{table}
-
-
-\begin{table}[ht]
-    \centering
-    \renewcommand{\arraystretch}{1.5} % Increase row spacing
-    \setlength{\tabcolsep}{8pt} % Adjust column padding
-    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
-        \toprule
-        \multicolumn{2}{c}{\textbf{Quelques constantes}} \\
-        \midrule
-        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
-        \midrule
-    Constante de gravitation & $\mathcal{G} = \num{6,67e-11} \unit{\newton\meter\squared\per\kilogram\squared}$ \\ 
-    Vitesse de la lumière & $c = \num{3,00e8} \unit{\meter\per\second}$ \\ 
-    Constante de Planck & $h = \num{6,63e-34} \unit{\joule\second}$ \\ 
-    Charge élémentaire & $e = \num{1,60e-19} \unit{\coulomb}$ \\ 
-    Constante de Boltzmann & $k_B = \num{1,38e-23} \unit{\joule\per\kelvin}$ \\ 
-    Masse du proton & $m_p = \num{1,67e-27} \unit{\kilogram}$ \\ 
-    Masse de l'électron & $m_e = \num{9,11e-31} \unit{\kilogram}$ \\ 
-    Constante de permittivité du vide & $\varepsilon_0 = \num{8,85e-12} \unit{\farad\per\meter}$ \\ 
-    Constante de perméabilité du vide & $\mu_0 = {4\pi\times 10^{-7}} \unit{\henry\per\meter}$ \\ 
-    Champ de claquage de l'air sec &$ E_{\text{claquage, air sec}} = \num{10e5} \unit{\volt\per\meter}$ \\
-    Masse de la Terre & $M_\text{Terre} = \num{5,97e24} \unit{\kilogram}$ \\ 
-    Rayon moyen de la Terre & $R_\text{Terre} = \num{6,37e6} \unit{\meter}$ \\ 
-    Constante de Stefan-Boltzmann & $\sigma = \num{5,67e-8} \unit{\watt\per\meter\squared\per\kelvin^4}$ \\ 
-    Constante d'Avogadro & $N_A = \num{6,022e23} \unit{\per\mole}$ \\ 
-    Constante des gaz parfaits & $R = \num{8,31} \unit{\joule\per\mole\per\kelvin}$ \\ 
-    Masse du Soleil & $M_\odot = \num{1,989e30} \unit{\kilogram}$ \\  
-    Rayon moyen du Soleil & $R_\odot = \num{6,96e8} \unit{\meter}$ \\ 
-    K standard de la réaction d'autoprotolise de l'eau & $\mathrm{K}_e= \num{10e{-14}}$ \\
-    \bottomrule
-\end{tabular}
-\caption{Quelques constantes physiques}
-\label{tab:constantes}
-\end{table}
-
-
-
-\begin{table}[ht]
+\begin{table}[H]
     \centering
     Avec $j$ l'unité complexe de partie imaginaire positive. $\left(j^2 = -1, \Im(j)=1\right)$. On pose $x = \dfrac{\omega}{\omega_0}$
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
     \begin{tabular}{@{}p{9cm}p{10cm}@{}}
         \toprule
-        \multicolumn{2}{c}{\textbf{Quelques constantes}} \\
+        \multicolumn{2}{c}{\textbf{Filtrage}} \\
         \midrule
         \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
         \midrule
@@ -496,34 +497,11 @@ On se limite à des signaux lentements variables (En basse fréquence)
 \end{table}
 
 
-\begin{table}[ht]
-    \centering
-    \renewcommand{\arraystretch}{1.5} % Increase row spacing
-    \setlength{\tabcolsep}{8pt} % Adjust column padding
-    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
-        \toprule
-        \multicolumn{2}{c}{\textbf{Paquets d'ondes}} \\
-        \midrule
-        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
-        \midrule
-        EDA: & $\ddpv{\theta}{t}=v^2\ddpv{\theta}{x}-\dfrac{1}{\tau}\dpv{\theta}{t}-\omega_0^2\theta$ \\
-        Forme recherchée: & $\underline{\theta}(x,t)=\underline{\theta}_0e^{i(\omega t-kx)}$\\
-        Reformulation de l'EDA: & $-\omega^2\theta=v^2k^2\theta-\dfrac{1}{\tau}i\omega\theta-\omega_0\theta$\\
-        Relation de dispertion: ($\theta\neq0$) & $\dfrac{\omega_0^2-\omega^2}{v^2}+\dfrac{1}{v^2\tau}i\omega=k^2$\\
-        Vecteur d'onde complexe: & $\underline{k}=k'-ik ''$\\
-        Forme de l'onde: & $\underline{\theta}(x,t)=\underline{\theta}_0e^{-k''x}e^{i(\omega t-kx)}$\\
-        Vitesse de phase: & $v_{\varphi}=\dfrac{\omega}{k}$ \\
-        Distance caracteristique d'atténuation & $\dfrac{1}{|k''(\omega)|}$ \\
-        Klein Gordon (Limite $\omega_0 \ll 1$) & $\underline{k}^2=\dfrac{\omega_0^2-\omega^2}{v^2}$ \\
-        Vitesse de groupe & $v_g=\dv{\omega}{k}=\dfrac{1}{\dv{k}{\omega}}$ \\
-    \bottomrule
-\end{tabular}
-\caption{Paquets d'onde}
-\label{tab:packonde}
-\end{table}
+
+\section{Optique}
 
 
-\begin{table}[ht]
+\begin{table}[H]
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
@@ -550,8 +528,7 @@ On se limite à des signaux lentements variables (En basse fréquence)
 \label{tab:onduoptique}
 \end{table}
 
-
-\begin{table}[ht]
+\begin{table}[H]
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
@@ -572,7 +549,7 @@ On se limite à des signaux lentements variables (En basse fréquence)
 \label{tab:intermichel}
 \end{table}
 
-\begin{table}[ht]
+\begin{table}[H]
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
@@ -593,7 +570,9 @@ On se limite à des signaux lentements variables (En basse fréquence)
 \label{tab:intermichel}
 \end{table}
 
-\begin{table}[ht]
+\section{Quantique}
+
+\begin{table}[H]
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
@@ -633,6 +612,42 @@ On se limite à des signaux lentements variables (En basse fréquence)
 \end{tabular}
 \caption{Introduction aux equations de la physique quantique}
 \label{tab:quantphis}
+\end{table}
+
+\section{Annexes}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Increase row spacing
+    \setlength{\tabcolsep}{8pt} % Adjust column padding
+    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
+        \toprule
+        \multicolumn{2}{c}{\textbf{Quelques constantes}} \\
+        \midrule
+        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
+        \midrule
+    Constante de gravitation & $\mathcal{G} = \num{6,67e-11} \unit{\newton\meter\squared\per\kilogram\squared}$ \\ 
+    Vitesse de la lumière & $c = \num{3,00e8} \unit{\meter\per\second}$ \\ 
+    Constante de Planck & $h = \num{6,63e-34} \unit{\joule\second}$ \\ 
+    Charge élémentaire & $e = \num{1,60e-19} \unit{\coulomb}$ \\ 
+    Constante de Boltzmann & $k_B = \num{1,38e-23} \unit{\joule\per\kelvin}$ \\ 
+    Masse du proton & $m_p = \num{1,67e-27} \unit{\kilogram}$ \\ 
+    Masse de l'électron & $m_e = \num{9,11e-31} \unit{\kilogram}$ \\ 
+    Constante de permittivité du vide & $\varepsilon_0 = \num{8,85e-12} \unit{\farad\per\meter}$ \\ 
+    Constante de perméabilité du vide & $\mu_0 = {4\pi\times 10^{-7}} \unit{\henry\per\meter}$ \\ 
+    Champ de claquage de l'air sec &$ E_{\text{claquage, air sec}} = \num{10e5} \unit{\volt\per\meter}$ \\
+    Masse de la Terre & $M_\text{Terre} = \num{5,97e24} \unit{\kilogram}$ \\ 
+    Rayon moyen de la Terre & $R_\text{Terre} = \num{6,37e6} \unit{\meter}$ \\ 
+    Constante de Stefan-Boltzmann & $\sigma = \num{5,67e-8} \unit{\watt\per\meter\squared\per\kelvin^4}$ \\ 
+    Constante d'Avogadro & $N_A = \num{6,022e23} \unit{\per\mole}$ \\ 
+    Constante des gaz parfaits & $R = \num{8,31} \unit{\joule\per\mole\per\kelvin}$ \\ 
+    Masse du Soleil & $M_\odot = \num{1,989e30} \unit{\kilogram}$ \\  
+    Rayon moyen du Soleil & $R_\odot = \num{6,96e8} \unit{\meter}$ \\ 
+    K standard de la réaction d'autoprotolise de l'eau & $\mathrm{K}_e= \num{10e{-14}}$ \\
+    \bottomrule
+\end{tabular}
+\caption{Quelques constantes physiques}
+\label{tab:constantes}
 \end{table}
     
 \end{center}
