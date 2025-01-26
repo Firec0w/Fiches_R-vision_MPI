@@ -477,6 +477,32 @@ $\Delta$ un axe fixe, $\mathcal{D} \in \Delta$, $O, O', M$ des points de l'espac
 \label{tab:der}
 \end{table}
 
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Increase row spacing
+    \setlength{\tabcolsep}{8pt} % Adjust column padding
+    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
+        \toprule
+        \multicolumn{2}{c}{\textbf{Ondes éléctromagnétiques dans l'ionosphère}} \\
+        \midrule
+        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
+        \midrule
+        Hypothèses sur le plasma & $\begin{array}{l}\text{Dilué: On néglige la force de drude} \\ \text{Neutre: Il y a autant de charges} + \text{que de } - \\ \text{Non relativistes: Vitesses faibles devant} c\end{array}$ \\
+        Équations de Maxwell dans le plasma & $\begin{matrix}(MG): \div \vec{E} = 0 & (MF): \rot\vec{E} = -\dpv{\vec{B}}{t} \\ (MT): \div \vec{B} = 0 & (MA): \rot \vec{B} = \mu_0 \underline {\vec \j} + \dfrac{1}{c^2}\dpv{\underline {\vec E}}{t}\end{matrix}$ \\
+        Conductivité complexe du plasma & $\underline {\vec \j} = \underline \gamma \underline {\vec E}  = \dfrac{ne^2}{mi\omega} \underline {\vec E}$ \\
+        Pulsation Plasma (Pulsation de coupure) & $\omega_p = \sqrt{\dfrac{ne^2}{m\varepsilon_0}}$ \\
+        Relation de dispersion dans le plasma (C'est Kleine Gordon !)& $\underline k ^2 = \dfrac{\omega^2 - \omega_p^2}{c^2}$ \\
+        Indice Optique & $n(\omega) = \dfrac{c}{|v_{\varphi}(\omega)|}$ \\
+        Rappel: Formule de Rayleigh & $v_g = v_{\varphi} + k'\dv{v_{\varphi}}{k'}$ \\
+        Formule de Rayleigh, version avec $n$ & $v_g = \dfrac{\pm c}{n+\omega\dv{n}{\omega}}$ \\ 
+        Dispertion anormale (Impossible dans le plasma): Dans ce cas, $v_g$ ne définit pas la vitesse de transport de l'information & $\dv{n}{\omega} < 0$ et $v_{\varphi} > c$\\
+        Ordre de grandeur: Fréquence de coupure $f_p$ dans l'ionosphère terrestre & $f_p \simeq \num{10}\unit{\MHz}$ \\
+    \bottomrule
+\end{tabular}
+\caption{Ondes éléctromagnétiques dans l'ionosphère}
+\label{tab:ohm_iono}
+\end{table}
+
 
 On se limite à des signaux lentements variables (En basse fréquence)
 

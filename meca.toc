@@ -2,6 +2,6 @@
 \contentsline {section}{\numberline {1}Mécanique}{1}{}%
 \contentsline {section}{\numberline {2}Ondes}{3}{}%
 \contentsline {section}{\numberline {3}Éléctromagnétique}{5}{}%
-\contentsline {section}{\numberline {4}Optique}{9}{}%
-\contentsline {section}{\numberline {5}Quantique}{11}{}%
-\contentsline {section}{\numberline {6}Annexes}{12}{}%
+\contentsline {section}{\numberline {4}Optique}{10}{}%
+\contentsline {section}{\numberline {5}Quantique}{12}{}%
+\contentsline {section}{\numberline {6}Annexes}{13}{}%
