@@ -388,18 +388,36 @@ $\Delta$ un axe fixe, $\mathcal{D} \in \Delta$, $O, O', M$ des points de l'espac
     Lien champ éléctrique potentiels & $ \text{d}V = -\vec{E} \cdot \text{d}\vec{\mathscr{l}}$ \\ 
     Pour une variable d'état $\mathcal{E}$ & $\displaystyle \Delta \mathcal{E} = \sum\limits_{i} \mathcal{E}_{i, \text{échangé}} + \mathcal{E}_{\text{crée}}$ \\ 
     Pour une variable d'état (infinitésimal) $\mathcal{E}$ & $\displaystyle \text{d} \mathcal{E} = \sum\limits_{i} \delta\mathcal{E}_{i, \text{échangé}} + \delta \mathcal{E}_{\text{crée}}$ \\ 
-    Potentiel Dipôle & $V = \dfrac{\vec{p} \cdot \vec{u_r}}{4\pi \varepsilon_0 r^2} = \dfrac{p\cos(\theta)}{4\pi \varepsilon_0 r^2}$ \\ 
-    Champ éléctrique, dipôle non rayonnant & $\vec{E} = \dfrac{p}{4\pi \varepsilon_0 r^3}(2\cos(\theta) \vec{u_r} + \sin(\theta) \vec{u_r})$ \\ 
-    Champ éléctrique dipôle non rayonnant, Forme intrinseque & $\vec{E} = \dfrac{1}{4\pi\varepsilon_0 r^5}(3(\vec{p} \cdot \vec{r})\vec{r} - r^2\vec{p})$ \\ 
-    Moment dûe à un champ éléctrostatique sur un dipôle \textit{rigide} non rayonnant & $\vec{\mathcal{M}_O}=\vec{p}\wedge \vec{E}_{\text{ext}}$ \\
-    Énergie potentielle dûe à l'action éléstrostatique d'un champ uniforme sur un dipôle \textit{rigide} non rayonnant & $\mathcal{E}_{\text{p}} = -\vec{p}\cdot\vec{E}_{\text{ext}}$\\
-    Force exercée par un champ electrostatique sur un dipôle non rayonnant au point $O$ & $\vec{F}_{E_{\text{ext}\longrightarrow\text{dip}}} = \left(\vec{p}\cdot\grad\right)\vec{E}_{\text{ext}}(O)$\\
-    Analogie champ éléctrique $/$ magnétique & $\dfrac{1}{\varepsilon_0} \longleftrightarrow \mu_0$ et $\vec{p} \longleftrightarrow \vec{M}$ \\
     Relations de passage à l'interface conducteur-vide & $\left\{\begin{matrix} \vec{E}_{\text{vide}}(M,t) = \dfrac{\sigma(M,t)}{\varepsilon_0}\vec{n}_{\text{conducteur} \to \text{vide}} \\ \vec{B}_{\text{vide}} = \mu_0 \vec{\j}_s(M,t)\wedge \vec{n}_{\text{conducteur} \to \text{vide}}\end{matrix}\right.$ \\
     \bottomrule
 \end{tabular}
 \caption{Formules électromagnétique.}
 \label{tab:electromag}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Increase row spacing
+    \setlength{\tabcolsep}{8pt} % Adjust column padding
+    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
+        \toprule
+        \multicolumn{2}{c}{\textbf{Dipôles non rayonnants}} \\
+        \midrule
+        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
+        \midrule
+        Moment dipolaire & $\vec p = q \vec{NP}$ \\
+        Potentiel Dipôle & $V = \dfrac{\vec{p} \cdot \vec{u_r}}{4\pi \varepsilon_0 r^2} = \dfrac{p\cos(\theta)}{4\pi \varepsilon_0 r^2}$ \\ 
+        Champ éléctrique, dipôle non rayonnant & $\vec{E} = \dfrac{p}{4\pi \varepsilon_0 r^3}(2\cos(\theta) \vec{u_r} + \sin(\theta) \vec{u_r})$ \\ 
+        Champ éléctrique dipôle non rayonnant, Forme intrinseque & $\vec{E} = \dfrac{1}{4\pi\varepsilon_0 r^5}(3(\vec{p} \cdot \vec{r})\vec{r} - r^2\vec{p})$ \\ 
+        Moment dûe à un champ éléctrostatique sur un dipôle \textit{rigide} non rayonnant & $\vec{\mathcal{M}_O}=\vec{p}\wedge \vec{E}_{\text{ext}}$ \\
+        Énergie potentielle dûe à l'action éléstrostatique d'un champ uniforme sur un dipôle \textit{rigide} non rayonnant & $\mathcal{E}_{\text{p}} = -\vec{p}\cdot\vec{E}_{\text{ext}}$\\
+        Force exercée par un champ electrostatique sur un dipôle non rayonnant au point $O$ & $\vec{F}_{E_{\text{ext}\longrightarrow\text{dip}}} = \left(\vec{p}\cdot\grad\right)\vec{E}_{\text{ext}}(O)$\\
+        Analogie champ éléctrique $/$ magnétique & $\dfrac{1}{\varepsilon_0} \longleftrightarrow \mu_0$ et $\vec{p} \longleftrightarrow \vec{M}$ \\
+                
+    \bottomrule
+\end{tabular}
+\caption{Dipôles non rayonnants.}
+\label{tab:denr}
 \end{table}
 
 
@@ -428,6 +446,35 @@ $\Delta$ un axe fixe, $\mathcal{D} \in \Delta$, $O, O', M$ des points de l'espac
 \end{tabular}
 \caption{Energie éléctromagnétique}
 \label{tab:elec_energie}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Increase row spacing
+    \setlength{\tabcolsep}{8pt} % Adjust column padding
+    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
+        \toprule
+        \multicolumn{2}{c}{\textbf{Dipôles Rayonnants}} \\
+        \midrule
+        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
+        \midrule
+        Moment dipôlaire atome soumis à un champ éléctrique & $\vec p = \dfrac{(Ze)^2}{m\omega_0^2}E_0\cos(\omega t)\vec e_x$ \\
+        Approximation dipolaire & $r \gg a$ \\ 
+        Dans l'approximation non relativiste & $a\omega \ll c$ \\
+        Zone de rayonnement (Zone de champ lointaine) & $r \gg \lambda$ \\
+        À l'onde exitatrice $\vec E_{\text{ext}}$ est associé $\omega$ et $\lambda$ tel que & $\lambda f = c \ \ \lambda\dfrac{\omega}{2\pi} = c \ \ \omega = \dfrac{2\pi c}{\lambda}$ \\
+        Pour prendre en compte le temps de propagation de l'onde, on définit & $\xi = t - \frac{r}{c}$ \\
+        Expression des champs éléctromagnétiques dans cette zone & $\left\{ \begin{array}{l} \vec E (M,t) = \dfrac{\sin \theta}{4\pi \varepsilon r^3} \left(\dfrac{r}{c}\right)^2 p''(\xi)\vec e_{\theta} \\ \vec B (M,t) = \dfrac{\sin \theta}{4\pi \varepsilon_0 r^3 c}\left(\dfrac{r}{c}\right)^2 p''(\xi) \vec e_{\varphi}\end{array}\right.$ \\
+        Puissance rayonnée & $\av{\vec{\Pi} (M,t)}{t} = \dfrac{p_0^2 \omega^4 \sin^2 \theta}{32 \pi^2 \varepsilon_0 c^3 r^2}\vec e_r$ \\
+        Puissance moyenne, sphère rayon $r$, centré sur le dipôle & $\displaystyle \mathcal{P} = \iint\limits_{\text{Sphère}} \av{\vec \Pi (M,t)}{t} \cdot \vec{\d S} = \dfrac{p_0^2 \omega^4}{12\pi \varepsilon_0 c^3}$ \\
+        Régime Rayleigh (Régime basse fréquence) & $\omega^2 \ll \omega_0^2$ et donc, $p_0(\omega) = \dfrac{(Ze)^2E_0}{m\omega_0^2}$ \\
+        Puissance de Larmor & $\mathcal P_{\text{Larmor}} = \dfrac{q^2}{4\pi \varepsilon_0} \times \dfrac{2\av{p^2}{}}{3c^2}$ \\
+
+
+    \bottomrule
+\end{tabular}
+\caption{Dipôles Rayonnants}
+\label{tab:der}
 \end{table}
 
 
