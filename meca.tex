@@ -325,6 +325,7 @@ $\Delta$ un axe fixe, $\mathcal{D} \in \Delta$, $O, O', M$ des points de l'espac
     Énergie potentielle dûe à l'action éléstrostatique d'un champ uniforme sur un dipôle \textit{rigide} non rayonnant & $\mathcal{E}_{\text{p}} = -\vec{p}\cdot\vec{E}_{\text{ext}}$\\
     Force exercée par un champ electrostatique sur un dipôle non rayonnant au point $O$ & $\vec{F}_{E_{\text{ext}\longrightarrow\text{dip}}} = \left(\vec{p}\cdot\grad\right)\vec{E}_{\text{ext}}(O)$\\
     Analogie champ éléctrique $/$ magnétique & $\dfrac{1}{\varepsilon_0} \longleftrightarrow \mu_0$ et $\vec{p} \longleftrightarrow \vec{M}$ \\
+    Relations de passage à l'interface conducteur-vide & $\left\{\begin{matrix} \vec{E}_{\text{vide}}(M,t) = \dfrac{\sigma(M,t)}{\varepsilon_0}\vec{n}_{\text{conducteur} \to \text{vide}} \\ \vec{B}_{\text{vide}} = \mu_0 \vec{\j}_s(M,t)\wedge \vec{n}_{\text{conducteur} \to \text{vide}}\end{matrix}\right.$ \\
     \bottomrule
 \end{tabular}
 \caption{Formules électromagnétique.}
@@ -372,13 +373,27 @@ On se limite à des signaux lentements variables (En basse fréquence)
         \midrule
         \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
         \midrule
+        TRD appliqué au porteur mobile moyen $e^-$ libre: & $m\dv{\vec{v}}{t} = -e\vec{E} - \frac{m}{\tau}\vec{v}$ \\
+        Relation ``ohmique'' & $\vec{\underline{\j}} =\dfrac{\gamma_0}{1+i\tau\omega}\vec{\underline{E}} = \dfrac{\frac{ne^2\tau}{m}}{1+i\tau\omega}\vec{\underline{E}}$ \\
         Approximation basse fréquence & $\tau\omega \ll 1, \ \dfrac{\omega\varepsilon_0}{\gamma_0}\ll1$ \\ 
         Ordre de grandeur de $\omega$ pour le cuivre à $\num{100} \unit{\kelvin}$ & $\num{10e14} \unit{\radian\per\second}$ \\
         Cette approximation est vérifiée lorsque (Radiofréquences) & $\omega \ll \num{10e14}\unit{\radian\per\second}$ \\
         Radiofréquences: & $f \lesssim \num{10e9}\unit{\Hz}$ \\
         Équations de Maxwell dans l'ARQS & $\begin{matrix}(MG): \div \vec{E} = 0 & (MF): \rot\vec{E} = -\dpv{\vec{B}}{t} \\ (MT): \div \vec{B} = 0 & (MA): \rot \vec{B} = \mu_0\gamma_0\vec{E}\end{matrix}$ \\
-        Relation de dispertion (Obtenue en injectant (MF) dans (MA))& $\underline{k}^2 = -i\mu_0\gamma_0\omega$ \\
+        Relation de dispertion (Obtenue en injectant (MF) dans (MA))& $\underline{k}^2 = -i\mu_0\gamma_0\omega (\text{On a posé} \underline{k} = k'-ik'')$ \\
         Expression du champ éléctrique & $\vec{E}(M,t )=\vec{E_0}e^{-\frac{u}{\delta}}\cos\left(\omega t - \dfrac{u}{\delta} + \Phi\right)$ \\
+        Rappel: Distance caractéristique d'atténuation: & $\delta = \dfrac{1}{|k''(\omega)|}$ \\ 
+        Ordres de grandeur de $\delta$ & $\begin{array}{|c||c|c|} \hline \text{mat / freq} & \num{1}\unit{\kHz} & \num{1}\unit{\GHz} \\ \hline \text{cuivre} & \delta = \num{2}\unit{\mm} & \delta = \num{2}\unit{\micro\meter} \\ \text{fonte} & \delta =  \num{2}\unit{\cm} & \delta = \num{20}\unit{\micro\meter} \\ \hline \end{array}$ \\ 
+        Conducteur parfait: & $\vec{E}(M,t) = 0$ au sein du conducteur \\ 
+        Une OemPPM en incidence normale réféchie vérifie & \begin{itemize}\item même amplitude \item même pulsation \item même polarisation \item vecteurs d'ondes de même direction mais opposés \item La réfléction s'accompagne d'un déphasage de $\pi$\end{itemize} \\
+        Coefficient de réfléction en amplitude & $\underline \Omega =\dfrac{\text{Amplitude complexe de } \underline{E}_r \text{à l'interface}}{\text{Amplitude complexe de }\underline{E}_i \text{à l'interface}}$ \\
+        Transition & $\underline t =\dfrac{\underline{E}_r(\text{interface})}{\underline{E}_i(\text{interface})}$ \\ 
+        Dans le modèle du conducteur parfait & $\delta = 0, \ \gamma\to+\infty, \ \ \underline{\Omega} = -1, \ \ \underline t = 0$ \\
+        Stationairité des ondes du coté du vide & $\left\{ \begin{array}{l}\vec{B}_\text{vide} = \dfrac{2E_0}{c}\cos(\omega t + \varphi) \cos(ku)(\vec{e_u}\wedge \vec{e_p}) \\ \vec{E}_{\text{vide}} = 2E_0 \sin(\omega t + \varphi) \sin(ku)\vec{e_p} \end{array}\right.$ \\
+        Densité d'énergie éléctromagnétique moyenne & $\av{e_{em}(M,t)}{t} = \varepsilon_0E_0^2$ \\
+        Vecteur de Poynting moyen & $\av{\vec{\Pi}(M,t)}{t} = \vec{0}$ \\
+        
+
     \bottomrule
 \end{tabular}
 \caption{Ondes éléctromagnétiques dans les conducteurs Ohmiques}
