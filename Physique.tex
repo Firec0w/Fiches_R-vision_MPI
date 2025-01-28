@@ -1,5 +1,8 @@
 \documentclass[10pt,a4paper,titlepage,portrait]{article}
 
+%\usepackage{darkmode}
+%\enabledarkmode
+
 % Encoding and language
 \usepackage[utf8]{inputenc} % UTF-8 encoding
 \usepackage[T1]{fontenc} % Proper font encoding for European languages
@@ -8,7 +11,7 @@
 
 % Geometry settings
 \usepackage[
-    left=1cm, right=1cm, top=1cm, bottom=1cm,
+    left=1cm, right=1cm, top=2cm, bottom=2cm,
     headheight=10mm, includehead
 ]{geometry}
 
@@ -233,7 +236,7 @@
 \fancyhead[HL]{Section \thesection}
 \fancyhead[HC]{Formulaire de Physique}
 \fancyhead[HR]{MPI*}
-\begin{center}
+
 
 \tableofcontents
 
@@ -680,17 +683,38 @@ On se limite à des signaux lentements variables (En basse fréquence)
         Énergie cinétique & $\displaystyle \av{E_c}{\psi} = \rint \psi^* \left(\frac{-\hbar^2}{2m}\ddpv{\psi}{x}\right) \d x $\\
         Dans l'état stationnaire & $\varphi $ \\
         Longueur d'onde de De Broglie pour une onde (état) stationnaire & $\lambda_0 = \dfrac{h}{\sqrt{2mE}}$ \\
-        Vitesse de phase pour une propagation libre & $v_{\varphi} = \dfrac{\hbar \omega}{2m}$ \\
-        Vitesse de groupe pour une propagation libre & $v_g = \dfrac{\hbar k}{m}$ \\
-        Remarque: $v_g \neq v_\varphi$, la propagation est dispersive & \\ 
-        Inégalité de Heisenberg (Cauchy-Schwartz) & $\Delta u \Delta p_u \geqslant \dfrac{\hbar}{2}$ \\
-        Formule de diffraction pour les particules & $\Delta \sin\theta = \dfrac{\lambda_0}{a}$ \\
-        Equation locale de conservation des probabilités de présence & $\dpv{\rho}{t} + \dpv{j}{u} = 0 $ \\
-        Vecteur densité de courant de probabilité de présence & $\vec {\j} = \dfrac{1}{m}\mathrm{Re}\left(\psi^*\dfrac{\hbar}{i} \dpv{\psi}{u} \right)$ \\
 
         \bottomrule
 \end{tabular}
 \caption{Introduction aux equations de la physique quantique}
+\label{tab:quantphis}
+\end{table}
+
+
+\newpage 
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Increase row spacing
+    \setlength{\tabcolsep}{8pt} % Adjust column padding
+    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
+        \toprule
+        \multicolumn{2}{c}{\textbf{Introduction aux equations de la physique quantique (Tableau 2)}} \\
+        \midrule
+        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
+        \midrule
+
+    Vitesse de phase pour une propagation libre & $v_{\varphi} = \dfrac{\hbar \omega}{2m}$ \\
+    Vitesse de groupe pour une propagation libre & $v_g = \dfrac{\hbar k}{m}$ \\
+    Remarque: $v_g \neq v_\varphi$, la propagation est dispersive & \\ 
+    Inégalité de Heisenberg (Cauchy-Schwartz) & $\Delta u \Delta p_u \geqslant \dfrac{\hbar}{2}$ \\
+    Formule de diffraction pour les particules & $\Delta \sin\theta = \dfrac{\lambda_0}{a}$ \\
+    Equation locale de conservation des probabilités de présence & $\dpv{\rho}{t} + \dpv{j}{u} = 0 $ \\
+    Vecteur densité de courant de probabilité de présence & $\vec {\j} = \dfrac{1}{m}\mathrm{Re}\left(\psi^*\dfrac{\hbar}{i} \dpv{\psi}{u} \right)$ \\
+    Vecteur densité de courant de probabilité de présence pour une onde de Broglie & $\vec {\j} = \rho \av{v}{\psi} = |\psi|^2 \dfrac{\hbar \vec k}{m}$ \\
+
+\bottomrule
+\end{tabular}
+\caption{Introduction aux equations de la physique quantique (Tableau 2)}
 \label{tab:quantphis}
 \end{table}
 
@@ -730,6 +754,4 @@ On se limite à des signaux lentements variables (En basse fréquence)
 \label{tab:constantes}
 \end{table}
     
-\end{center}
-
 \end{document}
