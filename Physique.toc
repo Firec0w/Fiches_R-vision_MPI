@@ -1,0 +1,8 @@
+\babel@toc {french}{}\relax 
+\contentsline {section}{\numberline {1}Mécanique}{1}{}%
+\contentsline {section}{\numberline {2}Ondes}{3}{}%
+\contentsline {section}{\numberline {3}Éléctromagnétique}{5}{}%
+\contentsline {section}{\numberline {4}Optique}{10}{}%
+\contentsline {section}{\numberline {5}Quantique}{11}{}%
+\contentsline {section}{\numberline {6}Chimie}{14}{}%
+\contentsline {section}{\numberline {7}Annexes}{15}{}%

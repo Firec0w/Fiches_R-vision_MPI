@@ -3,6 +3,8 @@
 %\usepackage{darkmode}
 %\enabledarkmode
 
+\usepackage{xcolor}
+
 % Encoding and language
 \usepackage[utf8]{inputenc} % UTF-8 encoding
 \usepackage[T1]{fontenc} % Proper font encoding for European languages
@@ -143,18 +145,18 @@
 
 \newcommand*{\dvref}[3]
 {
-    \left(\frac{\d\vec{#1}}{\d#2}\right)_{\mathcal{#3}}
+    \left(\frac{\d\vec{#1}}{\d#2}\right)_{\mathrm{#3}}
 }
 
 \newcommand*{\dref}[3]
 {
-    \left(\frac{\d{#1}}{\d#2}\right)_{\mathcal{#3}}
+    \left(\frac{\d{#1}}{\d#2}\right)_{\mathrm{#3}}
 }
 
 
 \newcommand{\vecref}[2]
 {
-    \vec{#1_{\mathcal{#2}}}
+    \vec{#1_{\mathrm{#2}}}
 }
 
 \newcommand{\vect}
@@ -225,6 +227,12 @@
     \int_{\mathbb{R}}
 }
 
+% 
+\renewcommand{\phi}
+{
+    \varphi
+}
+
 \author{Quentin Lavigne}
 \title{}
 
@@ -254,19 +262,19 @@ $\Delta$ un axe fixe, $\mathcal{D} \in \Delta$, $O, O', M$ des points de l'espac
         \midrule
         \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
         \midrule
-        Formule de dérivation composée & $\dvref{U}{t}{R} = \dvref{U}{t}{R'} + \overrightarrow{\Omega}_{\mathcal{R'} / \mathcal{R}} \vect \overrightarrow{U}$ \\ 
+        Formule de dérivation composée & $\dvref{U}{t}{R} = \dvref{U}{t}{R'} + \overrightarrow{\Omega}_{\mathrm{R'} / \mathrm{R}} \vect \overrightarrow{U}$ \\ 
         Vitesse & $\vecref{v}{R}(M) = \vecref{v}{R'}(M) + \vec{v_e}(M)$ \\ 
-        Vitesse d'entrainement & $\vec{v_e}(M) = \vecref{v}{R}(O') + \vec{\Omega}_{\mathcal{R'/R}} \vect \vec{O'M}$ \\ 
+        Vitesse d'entrainement & $\vec{v_e}(M) = \vecref{v}{R}(O') + \vec{\Omega}_{\mathrm{R'/R}} \vect \vec{O'M}$ \\ 
         Vitesse ref en translation uniforme & $\vecref{v}{R}(M) = \vecref{v}{R'}(M) + \vec{v_e}(M) = \vecref{v}{R}(O') + \vecref{v}{R}(O')$ \\ 
-        Vitesse ref en rotation uniforme d'axe fixe & $\vecref{v}{R}(M) = \vecref{v}{R'}(M) + \vec{\Omega}_{\mathcal{R'/R}} \vect \vec{HM}$ \\ 
+        Vitesse ref en rotation uniforme d'axe fixe & $\vecref{v}{R}(M) = \vecref{v}{R'}(M) + \vec{\Omega}_{\mathrm{R'/R}} \vect \vec{HM}$ \\ 
         Accélération ref en translation uniforme & $\vecref{a}{R}(M) = \vecref{a}{R'}(M) + \vecref{a}{R}(O')$ \\ 
         Accélération ref en rotation uniforme d'axe fixe& $\vecref{a}{R}(M) = \vecref{a}{R'}(M) + \vec{a_c}(M) + \vec{a_e}(M)$ \\ 
-        Accélération de Coriolis & $\vec{a_e}(M) = 2\vec{\Omega}_{\mathcal{R'/R}} \vect \vecref{v}{R'}(M)$ \\ 
-        Accélération d'entrainement & $\vec{a_c}(M) = -\Omega^2_{\mathcal{R'/R}}\vec{HM}$ \\ 
+        Accélération de Coriolis & $\vec{a_c}(M) = 2\vec{\Omega}_{\mathrm{R'/R}} \vect \vecref{v}{R'}(M)$ \\ 
+        Accélération d'entrainement & $\vec{a_e}(M) = -\Omega^2_{\mathrm{R'/R}}\vec{HM}$ \\ 
         Théorème de la résultante dynamique & $\vecref{a}{R'} = \sum \vec{F_{ext}} - m\vec{a_e} - m\vec{a_c} = \sum \vec{F_{ext}} + \vec{F_{ie}} + \vec{F_{ic}}$ \\ 
-        Théorème du moment cinétique & $\dref{\vec{\mathcal{L}}_{A/\mathcal{R}'}(\text{M})}{t}{R} = \sum \vec{\mathcal{M}}_A\left(\vec{\text{F}_{ext}}\right) + \vec{\mathcal{M}}_A\left(\vec{\text{F}_{ie}}\right) + \vec{\mathcal{M}}_A\left(\vec{\text{F}_{ic}}\right)$ \\ 
+        Théorème du moment cinétique & $\dref{\vec{\mathcal{L}}_{A/\mathrm{R}'}(\text{M})}{t}{R} = \sum \vec{\mathcal{M}}_A\left(\vec{\text{F}_{ext}}\right) + \vec{\mathcal{M}}_A\left(\vec{\text{F}_{ie}}\right) + \vec{\mathcal{M}}_A\left(\vec{\text{F}_{ic}}\right)$ \\ 
         Energie d'entrainement, cas translation rectiligne & $\mathrm{E}_{p,ie} = ma_ex + \constant$ \\ 
-        Energie d'entrainement, cas rotation uniforme d'axe fixe & $\mathrm{E}_{p,ie} = -\frac{1}{2}m\Omega^{2}_{\mathcal{R}'/\mathcal{R}}r^2+\constant$ \\ 
+        Energie d'entrainement, cas rotation uniforme d'axe fixe & $\mathrm{E}_{p,ie} = -\frac{1}{2}m\Omega^{2}_{\mathrm{R}'/\mathrm{R}}r^2+\constant$ \\ 
         \bottomrule
     \end{tabular}
     \caption{Formules relatives aux référentiels non inertiels.}
@@ -410,7 +418,7 @@ $\Delta$ un axe fixe, $\mathcal{D} \in \Delta$, $O, O', M$ des points de l'espac
         \midrule
         Moment dipolaire & $\vec p = q \vec{NP}$ \\
         Potentiel Dipôle & $V = \dfrac{\vec{p} \cdot \vec{u_r}}{4\pi \varepsilon_0 r^2} = \dfrac{p\cos(\theta)}{4\pi \varepsilon_0 r^2}$ \\ 
-        Champ éléctrique, dipôle non rayonnant & $\vec{E} = \dfrac{p}{4\pi \varepsilon_0 r^3}(2\cos(\theta) \vec{u_r} + \sin(\theta) \vec{u_r})$ \\ 
+        Champ éléctrique, dipôle non rayonnant & $\vec{E} = \dfrac{p}{4\pi \varepsilon_0 r^3}(2\cos(\theta) \vec{u_r} + \sin(\theta) \vec{u_\theta})$ \\ 
         Champ éléctrique dipôle non rayonnant, Forme intrinseque & $\vec{E} = \dfrac{1}{4\pi\varepsilon_0 r^5}(3(\vec{p} \cdot \vec{r})\vec{r} - r^2\vec{p})$ \\ 
         Moment dûe à un champ éléctrostatique sur un dipôle \textit{rigide} non rayonnant & $\vec{\mathcal{M}_O}=\vec{p}\wedge \vec{E}_{\text{ext}}$ \\
         Énergie potentielle dûe à l'action éléstrostatique d'un champ uniforme sur un dipôle \textit{rigide} non rayonnant & $\mathcal{E}_{\text{p}} = -\vec{p}\cdot\vec{E}_{\text{ext}}$\\
@@ -718,6 +726,59 @@ On se limite à des signaux lentements variables (En basse fréquence)
 \label{tab:quantphis}
 \end{table}
 
+
+Avec $\eta$ la taille du bord, $\lambda_0$ la longueur d'onde de De Broglie
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Increase row spacing
+    \setlength{\tabcolsep}{8pt} % Adjust column padding
+    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
+        \toprule
+        \multicolumn{2}{c}{\textbf{Quantas et barrieres de potentiels}} \\
+        \midrule
+        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
+        \midrule
+
+        Approximation sur la taille du bord & $\lambda_0 \ll \eta$ \\
+        Conditions de discontinuités & $\phi$ et $\phi'$ sont continues \\
+        Expression de la fonction d'onde, cas $E > V_0$ & $\psi(x,t) = \left\{\begin{array}{l}A_1e^{-i\frac{E}{\hbar}t}\left(e^{ik_1x} + \dfrac{k_1-k_2}{k_1+k_2}e^{ik_1x}\right) \ \text{si } x < 0\\ A_1 e^{-i\frac{E}{\hbar}t}\dfrac{2k_1}{k_1+k_2}e^{-ik_2x}\end{array}\right.$ \\
+        Expression de la fonction d'onde, cas $E < V_0$ & $\psi(x,t) = \left\{\begin{array}{l}
+        \end{array}\right.$ \\
+        Probabilité de transmission en la marche de potentiel & $T = \dfrac{||\vec{\j}_t||}{||\vec{\j}_i||}$ \\
+        Probabilité de transmission en la marche de potentiel & $R = \dfrac{||\vec{\j}_r||}{||\vec{\j}_i||}$ \\
+
+
+\bottomrule
+\end{tabular}
+\caption{Quantas et barrieres de potentiels}
+\label{tab:quantpos}
+\end{table}
+
+\section{Chimie}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Increase row spacing
+    \setlength{\tabcolsep}{8pt} % Adjust column padding
+    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
+        \toprule
+        \multicolumn{2}{c}{\textbf{Transformations Chimiques \& acide base}} \\
+        \midrule
+        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
+        \midrule
+
+        Potentiel Hydrogène pour un acide fort en solution & $pH = -\log\left(\dfrac{[H_3O^+]}{c_0}\right)$ \\
+        Constante d'équilibre de la réaction d'autoprotolyse de l'eau & $2H_2 O_{(l)} \leftrightharpoons H_3O^+_{(aq)} + HO^-_{(aq)} \ \ \ \ Ke = 1.0\times10^{-14}$ \\
+        Potentiel Hydrogène pour une base forte en solution & $[H_3O^+] = \dfrac{Ke(c_0)^2}{[HO^-]}$ donc $pH = -\log\left(\dfrac{Ke(c_0)}{[HO^-]}\right)$ \\
+        Formule d'Enderson (C'est $-\log$(Gulberg \& Waage)) & $-pH = -pKa + \log\left(\dfrac{[\text{base}]}{[\text{acide}]}\right)$ \\
+        Approximation de la réaction très peu avancée & $c_0K_a \ll c_a$ \\
+        Approximation de la réaction très avancée & $c_0K_a \gg c_a$ \\
+\bottomrule
+\end{tabular}
+\caption{Transformations Chimiques \& acide base}
+\label{tab:chem}
+\end{table}
+
 \section{Annexes}
 
 \begin{table}[H]
@@ -747,7 +808,7 @@ On se limite à des signaux lentements variables (En basse fréquence)
     Constante des gaz parfaits & $R = \num{8,31} \unit{\joule\per\mole\per\kelvin}$ \\ 
     Masse du Soleil & $M_\odot = \num{1,989e30} \unit{\kilogram}$ \\  
     Rayon moyen du Soleil & $R_\odot = \num{6,96e8} \unit{\meter}$ \\ 
-    K standard de la réaction d'autoprotolise de l'eau & $\mathrm{K}_e= \num{10e{-14}}$ \\
+    K standard de la réaction d'autoprotolise de l'eau ($2H_2 O_{(l)} \leftrightharpoons H_3O^+_{(aq)} + HO^-_{(aq)}$) & $\mathrm{K}_e= \num{10e{-14}}$ \\
     \bottomrule
 \end{tabular}
 \caption{Quelques constantes physiques}
