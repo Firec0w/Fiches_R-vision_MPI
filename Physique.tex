@@ -1,7 +1,17 @@
-\documentclass[10pt,a4paper,titlepage,portrait]{article}
+\documentclass[10pt,a4paper,titlepage,landscape]{article}
 
 %\usepackage{darkmode}
 %\enabledarkmode
+
+\usepackage{color}   %May be necessary if you want to color links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
 
 \usepackage{xcolor}
 
@@ -233,6 +243,8 @@
     \varphi
 }
 
+
+
 \author{Quentin Lavigne}
 \title{}
 
@@ -256,26 +268,23 @@ $\Delta$ un axe fixe, $\mathcal{D} \in \Delta$, $O, O', M$ des points de l'espac
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
-    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
-        \toprule
-        \multicolumn{2}{c}{\textbf{Référenciels non Galiléens}} \\
-        \midrule
-        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
-        \midrule
-        Formule de dérivation composée & $\dvref{U}{t}{R} = \dvref{U}{t}{R'} + \overrightarrow{\Omega}_{\mathrm{R'} / \mathrm{R}} \vect \overrightarrow{U}$ \\ 
-        Vitesse & $\vecref{v}{R}(M) = \vecref{v}{R'}(M) + \vec{v_e}(M)$ \\ 
-        Vitesse d'entrainement & $\vec{v_e}(M) = \vecref{v}{R}(O') + \vec{\Omega}_{\mathrm{R'/R}} \vect \vec{O'M}$ \\ 
-        Vitesse ref en translation uniforme & $\vecref{v}{R}(M) = \vecref{v}{R'}(M) + \vec{v_e}(M) = \vecref{v}{R}(O') + \vecref{v}{R}(O')$ \\ 
-        Vitesse ref en rotation uniforme d'axe fixe & $\vecref{v}{R}(M) = \vecref{v}{R'}(M) + \vec{\Omega}_{\mathrm{R'/R}} \vect \vec{HM}$ \\ 
-        Accélération ref en translation uniforme & $\vecref{a}{R}(M) = \vecref{a}{R'}(M) + \vecref{a}{R}(O')$ \\ 
-        Accélération ref en rotation uniforme d'axe fixe& $\vecref{a}{R}(M) = \vecref{a}{R'}(M) + \vec{a_c}(M) + \vec{a_e}(M)$ \\ 
-        Accélération de Coriolis & $\vec{a_c}(M) = 2\vec{\Omega}_{\mathrm{R'/R}} \vect \vecref{v}{R'}(M)$ \\ 
-        Accélération d'entrainement & $\vec{a_e}(M) = -\Omega^2_{\mathrm{R'/R}}\vec{HM}$ \\ 
-        Théorème de la résultante dynamique & $\vecref{a}{R'} = \sum \vec{F_{ext}} - m\vec{a_e} - m\vec{a_c} = \sum \vec{F_{ext}} + \vec{F_{ie}} + \vec{F_{ic}}$ \\ 
-        Théorème du moment cinétique & $\dref{\vec{\mathcal{L}}_{A/\mathrm{R}'}(\text{M})}{t}{R} = \sum \vec{\mathcal{M}}_A\left(\vec{\text{F}_{ext}}\right) + \vec{\mathcal{M}}_A\left(\vec{\text{F}_{ie}}\right) + \vec{\mathcal{M}}_A\left(\vec{\text{F}_{ic}}\right)$ \\ 
-        Energie d'entrainement, cas translation rectiligne & $\mathrm{E}_{p,ie} = ma_ex + \constant$ \\ 
-        Energie d'entrainement, cas rotation uniforme d'axe fixe & $\mathrm{E}_{p,ie} = -\frac{1}{2}m\Omega^{2}_{\mathrm{R}'/\mathrm{R}}r^2+\constant$ \\ 
-        \bottomrule
+    \begin{tabular}{@{}|p{9cm}|p{10cm}@{}|}
+
+        \multicolumn{2}{c}{\textbf{Référenciels non Galiléens}} \\ \hline
+
+        Formule de dérivation composée & $\dvref{U}{t}{R} = \dvref{U}{t}{R'} + \overrightarrow{\Omega}_{\mathrm{R'} / \mathrm{R}} \vect \overrightarrow{U}$ \\ \hline 
+        Vitesse & $\vecref{v}{R}(M) = \vecref{v}{R'}(M) + \vec{v_e}(M)$ \\ \hline 
+        Vitesse d'entrainement & $\vec{v_e}(M) = \vecref{v}{R}(O') + \vec{\Omega}_{\mathrm{R'/R}} \vect \vec{O'M}$ \\ \hline 
+        Vitesse ref en translation uniforme & $\vecref{v}{R}(M) = \vecref{v}{R'}(M) + \vec{v_e}(M) = \vecref{v}{R}(O') + \vecref{v}{R}(O')$ \\ \hline 
+        Vitesse ref en rotation uniforme d'axe fixe & $\vecref{v}{R}(M) = \vecref{v}{R'}(M) + \vec{\Omega}_{\mathrm{R'/R}} \vect \vec{HM}$ \\ \hline 
+        Accélération ref en translation uniforme & $\vecref{a}{R}(M) = \vecref{a}{R'}(M) + \vecref{a}{R}(O')$ \\ \hline 
+        Accélération ref en rotation uniforme d'axe fixe& $\vecref{a}{R}(M) = \vecref{a}{R'}(M) + \vec{a_c}(M) + \vec{a_e}(M)$ \\ \hline 
+        Accélération de Coriolis & $\vec{a_c}(M) = 2\vec{\Omega}_{\mathrm{R'/R}} \vect \vecref{v}{R'}(M)$ \\ \hline 
+        Accélération d'entrainement & $\vec{a_e}(M) = -\Omega^2_{\mathrm{R'/R}}\vec{HM}$ \\ \hline 
+        Théorème de la résultante dynamique & $\vecref{a}{R'} = \sum \vec{F_{ext}} - m\vec{a_e} - m\vec{a_c} = \sum \vec{F_{ext}} + \vec{F_{ie}} + \vec{F_{ic}}$ \\ \hline 
+        Théorème du moment cinétique & $\dref{\vec{\mathcal{L}}_{A/\mathrm{R}'}(\text{M})}{t}{R} = \sum \vec{\mathcal{M}}_A\left(\vec{\text{F}_{ext}}\right) + \vec{\mathcal{M}}_A\left(\vec{\text{F}_{ie}}\right) + \vec{\mathcal{M}}_A\left(\vec{\text{F}_{ic}}\right)$ \\ \hline 
+        Energie d'entrainement, cas translation rectiligne & $\mathrm{E}_{p,ie} = ma_ex + \constant$ \\ \hline 
+        Energie d'entrainement, cas rotation uniforme d'axe fixe & $\mathrm{E}_{p,ie} = -\frac{1}{2}m\Omega^{2}_{\mathrm{R}'/\mathrm{R}}r^2+\constant$ \\ \hline 
     \end{tabular}
     \caption{Formules relatives aux référentiels non inertiels.}
     \label{tab:ref_non_inertiel}
@@ -286,26 +295,23 @@ $\Delta$ un axe fixe, $\mathcal{D} \in \Delta$, $O, O', M$ des points de l'espac
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
-    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
-        \toprule
-        \multicolumn{2}{c}{\textbf{Énergétique}} \\
-        \midrule
-        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
-        \midrule
-    Puissance d'une force & $\mathcal{P}(\vec{f}) = \vec{f} \cdot \vec{v}$ \\ 
-    Travail élémentaire & $\delta W(\vec{f}) = \mathcal{P}(\vec{f})\text{d}t=\vec{f}\cdot \text{d}\vec{OM}$ \\ 
-    Force conservative & $\exists E_{p} \ | \ \delta W(\vec{f}) = -\text{d}E_{p}$ \\ 
-    Travail d'une force & $\displaystyle W(\vec{f}) = \int_{\text{M}\in\overset{\curvearrowright}{AB}}\delta W(\vec{f})$ \\ 
-    Condition pour qu'une force dérive d'une $E_p$ & $\rot{\vec{\text{F}}} = \vec{0}$ \\ 
-    Théorème de l'énergie cinétique & $\displaystyle \Delta E_c = \sum\limits_{i}W(\vec{f_i})$ \\ 
-    Energie potentielle & $\displaystyle E_p = -\int_{\Gamma}\text{d}E_p$ \\ 
-    Energie mécanique & $E_m = E_p + E_c$ \\ 
-    Théorème de l'énergie mécanique & $\displaystyle \Delta E_m = \sum_{i}W(\vec{F_i}_{\text{, non conservative}})$ \\ 
-    Lien énergie potentielle / force & $\vec{F} = -\vec{\nabla} E_p = -\grad(E_p)$ \\ 
-    Lien puissance / Energie & $\mathcal{P} = \dv{E}{t}$ \\ 
-    Théorème de la puissance cinétique & $\displaystyle \dv{E_c}{t} = \sum_{i}\mathcal{P}(\vec{f_i})$ \\ 
-    \bottomrule
-\end{tabular}
+    \begin{tabular}{@{}|p{9cm}|p{10cm}@{}|}
+
+        \multicolumn{2}{c}{\textbf{Énergétique}} \\ \hline
+
+    Puissance d'une force & $\mathcal{P}(\vec{f}) = \vec{f} \cdot \vec{v}$ \\ \hline 
+    Travail élémentaire & $\delta W(\vec{f}) = \mathcal{P}(\vec{f})\text{d}t=\vec{f}\cdot \text{d}\vec{OM}$ \\ \hline 
+    Force conservative & $\exists E_{p} \ | \ \delta W(\vec{f}) = -\text{d}E_{p}$ \\ \hline 
+    Travail d'une force & $\displaystyle W(\vec{f}) = \int_{\text{M}\in\overset{\curvearrowright}{AB}}\delta W(\vec{f})$ \\ \hline 
+    Condition pour qu'une force dérive d'une $E_p$ & $\rot{\vec{\text{F}}} = \vec{0}$ \\ \hline 
+    Théorème de l'énergie cinétique & $\displaystyle \Delta E_c = \sum\limits_{i}W(\vec{f_i})$ \\ \hline 
+    Energie potentielle & $\displaystyle E_p = -\int_{\Gamma}\text{d}E_p$ \\ \hline 
+    Energie mécanique & $E_m = E_p + E_c$ \\ \hline 
+    Théorème de l'énergie mécanique & $\displaystyle \Delta E_m = \sum_{i}W(\vec{F_i}_{\text{, non conservative}})$ \\ \hline 
+    Lien énergie potentielle / force & $\vec{F} = -\vec{\nabla} E_p = -\grad(E_p)$ \\ \hline 
+    Lien puissance / Energie & $\mathcal{P} = \dv{E}{t}$ \\ \hline 
+    Théorème de la puissance cinétique & $\displaystyle \dv{E_c}{t} = \sum_{i}\mathcal{P}(\vec{f_i})$ \\ \hline 
+    \end{tabular}
 \caption{Formules énergiétiques.}
 \label{tab:energetique}
 \end{table}
@@ -318,29 +324,26 @@ $\Delta$ un axe fixe, $\mathcal{D} \in \Delta$, $O, O', M$ des points de l'espac
     Avec $u$ une coordonnée de l'espace ($u = ax + by + cz$), et $\vec{r} = \vec{e_x} + \vec{e_y} + \vec{e_z}$
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
-    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
-        \toprule
-        \multicolumn{2}{c}{\textbf{Formules: Les ondes}} \\
-        \midrule
-        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
-        \midrule
-    D'Alembertien & $\square  \varPsi = \Delta \varPsi - \dfrac{1}{v^2}\ddpv{\varPsi}{t}$ \\ 
-    Équation de D'Alembert & $\square \varPsi = 0$ \\ 
-    Cas 1D & $\square \varPsi = \ddpv{\varPsi}{u} - \dfrac{1}{v^2}\ddpv{\varPsi}{t} = 0$, avec $u = \alpha x + \beta y + \gamma z$ \\ 
-    Surface d'onde & Points $M$ à $t$ fixé tel que $\varPsi(M, t) = \constant$ \\ 
-    Solutions de l'EDA 1D & $\varPsi(u, t) = f(u-tv) + g(u + vt)$ ou $f(t - \frac{u}{v}) + g(t + \frac{u}{v})$ \\ 
-    Pour $\varPsi$ solution de l'EDA 1D & Avec $a(u) = \varPsi(u, 0)$ et $b(u) = \dpv{\varPsi}{t}(u,0) = b(u)$ \\ 
-    On a & $\displaystyle\varPsi(u, t) = \dfrac{1}{2}\left(a(u-vt) + a(u+vt) + \dfrac{1}{v} \int_{u-vt}^{u+vt}b(s)\d s\right)$ \\
-    Onde progressive monochromatique & $\varPsi(u, t) = \varPsi_0\cos\left(\omega t \pm ku + \phi\right) = \varPsi_0\cos\left(\omega\left(t\pm \frac{u}{v}\right) + \phi\right)$ \\
-    Vecteur d'onde & $\vec{k} = k\vec{e_u}$ \\
-    Norme du vecteur d'onde & $\|\vec{k}\| = k(\omega) = \dfrac{\omega}{v} = \vec{r} \cdot \vec{k}$ \\
-    Longueur d'onde & $\lambda = T^{-1} = \dfrac{2\pi}{k}$ (car $k(u+\lambda) = ku + 2\pi$)\\
-    Célérité d'une onde dans la matière & $v_{\text{mat}} = \sqrt{\dfrac{Ka^2}{m}} =\sqrt{\dfrac{E}{\rho}}$ Avec $E = \dfrac{K}{a}$ le module de Young et $\rho$ sa masse volumique. \\ 
-    Célérité d'une onde dans une corde & $v_{\text{corde}} = \sqrt{\dfrac{T}{\mu_0}}$ Avec $T$ la tension et $\mu_0$ la masse linéique\\
-    Ondes stationnaires & $\varPsi(u, t) = \gamma{(t)}\phi{(u)}$ \\
-    Sur une corde de longueur $L$, & $y_n(x,t) = \left[a_n\cos\left(\dfrac{n\pi v}{L}t\right) + b_n\sin\left(\dfrac{n\pi v}{L} t\right)\right]\sin\left(\dfrac{n\pi v}{L}\right)$\\
-    \bottomrule
-\end{tabular}
+    \begin{tabular}{@{}|p{9cm}|p{10cm}@{}|}
+
+        \multicolumn{2}{c}{\textbf{Formules: Les ondes}} \\ \hline
+
+    D'Alembertien & $\square  \varPsi = \Delta \varPsi - \dfrac{1}{v^2}\ddpv{\varPsi}{t}$ \\ \hline 
+    Équation de D'Alembert & $\square \varPsi = 0$ \\ \hline 
+    Cas 1D & $\square \varPsi = \ddpv{\varPsi}{u} - \dfrac{1}{v^2}\ddpv{\varPsi}{t} = 0$, avec $u = \alpha x + \beta y + \gamma z$ \\ \hline 
+    Surface d'onde & Points $M$ à $t$ fixé tel que $\varPsi(M, t) = \constant$ \\ \hline 
+    Solutions de l'EDA 1D & $\varPsi(u, t) = f(u-tv) + g(u + vt)$ ou $f(t - \frac{u}{v}) + g(t + \frac{u}{v})$ \\ \hline 
+    Pour $\varPsi$ solution de l'EDA 1D & Avec $a(u) = \varPsi(u, 0)$ et $b(u) = \dpv{\varPsi}{t}(u,0) = b(u)$ \\ \hline 
+    On a & $\displaystyle\varPsi(u, t) = \dfrac{1}{2}\left(a(u-vt) + a(u+vt) + \dfrac{1}{v} \int_{u-vt}^{u+vt}b(s)\d s\right)$ \\ \hline
+    Onde progressive monochromatique & $\varPsi(u, t) = \varPsi_0\cos\left(\omega t \pm ku + \phi\right) = \varPsi_0\cos\left(\omega\left(t\pm \frac{u}{v}\right) + \phi\right)$ \\ \hline
+    Vecteur d'onde & $\vec{k} = k\vec{e_u}$ \\ \hline
+    Norme du vecteur d'onde & $\|\vec{k}\| = k(\omega) = \dfrac{\omega}{v} = \vec{r} \cdot \vec{k}$ \\ \hline
+    Longueur d'onde & $\lambda = T^{-1} = \dfrac{2\pi}{k}$ (car $k(u+\lambda) = ku + 2\pi$)\\ \hline
+    Célérité d'une onde dans la matière & $v_{\text{mat}} = \sqrt{\dfrac{Ka^2}{m}} =\sqrt{\dfrac{E}{\rho}}$ Avec $E = \dfrac{K}{a}$ le module de Young et $\rho$ sa masse volumique. \\ \hline 
+    Célérité d'une onde dans une corde & $v_{\text{corde}} = \sqrt{\dfrac{T}{\mu_0}}$ Avec $T$ la tension et $\mu_0$ la masse linéique\\ \hline
+    Ondes stationnaires & $\varPsi(u, t) = \gamma{(t)}\phi{(u)}$ \\ \hline
+    Sur une corde de longueur $L$, & $y_n(x,t) = \left[a_n\cos\left(\dfrac{n\pi v}{L}t\right) + b_n\sin\left(\dfrac{n\pi v}{L} t\right)\right]\sin\left(\dfrac{n\pi v}{L}\right)$\\ \hline
+    \end{tabular}
 \caption{Formules: Les Ondes}
 \label{tab:ondes}
 \end{table}
@@ -349,24 +352,21 @@ $\Delta$ un axe fixe, $\mathcal{D} \in \Delta$, $O, O', M$ des points de l'espac
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
-    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
-        \toprule
-        \multicolumn{2}{c}{\textbf{Paquets d'ondes}} \\
-        \midrule
-        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
-        \midrule
-        EDA: & $\ddpv{\theta}{t}=v^2\ddpv{\theta}{x}-\dfrac{1}{\tau}\dpv{\theta}{t}-\omega_0^2\theta$ \\
-        Forme recherchée: & $\underline{\theta}(x,t)=\underline{\theta}_0e^{i(\omega t-kx)}$\\
-        Reformulation de l'EDA: & $-\omega^2\theta=v^2k^2\theta-\dfrac{1}{\tau}i\omega\theta-\omega_0\theta$\\
-        Relation de dispertion: ($\theta\neq0$) & $\dfrac{\omega_0^2-\omega^2}{v^2}+\dfrac{1}{v^2\tau}i\omega=k^2$\\
-        Vecteur d'onde complexe: & $\underline{k}=k'-ik ''$\\
-        Forme de l'onde: & $\underline{\theta}(x,t)=\underline{\theta}_0e^{-k''x}e^{i(\omega t-kx)}$\\
-        Vitesse de phase: & $v_{\varphi}=\dfrac{\omega}{k}$ \\
-        Distance caracteristique d'atténuation & $\dfrac{1}{|k''(\omega)|}$ \\
-        Klein Gordon (Limite $\omega_0 \ll 1$) & $\underline{k}^2=\dfrac{\omega_0^2-\omega^2}{v^2}$ \\
-        Vitesse de groupe & $v_g=\dv{\omega}{k}=\dfrac{1}{\dv{k}{\omega}}$ \\
-    \bottomrule
-\end{tabular}
+    \begin{tabular}{@{}|p{9cm}|p{10cm}@{}|}
+
+        \multicolumn{2}{c}{\textbf{Paquets d'ondes}} \\ \hline
+
+        EDA: & $\ddpv{\theta}{t}=v^2\ddpv{\theta}{x}-\dfrac{1}{\tau}\dpv{\theta}{t}-\omega_0^2\theta$ \\ \hline
+        Forme recherchée: & $\underline{\theta}(x,t)=\underline{\theta}_0e^{i(\omega t-kx)}$\\ \hline
+        Reformulation de l'EDA: & $-\omega^2\theta=v^2k^2\theta-\dfrac{1}{\tau}i\omega\theta-\omega_0\theta$\\ \hline
+        Relation de dispertion: ($\theta\neq0$) & $\dfrac{\omega_0^2-\omega^2}{v^2}+\dfrac{1}{v^2\tau}i\omega=k^2$\\ \hline
+        Vecteur d'onde complexe: & $\underline{k}=k'-ik ''$\\ \hline
+        Forme de l'onde: & $\underline{\theta}(x,t)=\underline{\theta}_0e^{-k''x}e^{i(\omega t-kx)}$\\ \hline
+        Vitesse de phase: & $v_{\varphi}=\dfrac{\omega}{k}$ \\ \hline
+        Distance caracteristique d'atténuation & $\dfrac{1}{|k''(\omega)|}$ \\ \hline
+        Klein Gordon (Limite $\omega_0 \ll 1$) & $\underline{k}^2=\dfrac{\omega_0^2-\omega^2}{v^2}$ \\ \hline
+        Vitesse de groupe & $v_g=\dv{\omega}{k}=\dfrac{1}{\dv{k}{\omega}}$ \\ \hline
+    \end{tabular}
 \caption{Paquets d'onde}
 \label{tab:packonde}
 \end{table}
@@ -377,31 +377,25 @@ $\Delta$ un axe fixe, $\mathcal{D} \in \Delta$, $O, O', M$ des points de l'espac
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
-    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
-        \toprule
-        \multicolumn{2}{c}{\textbf{Électromagnétique}} \\
-        \midrule
-        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
-        \midrule
-    Vecteur densité de courant volumique & $\vec{\j} = qn^{*}\vec{v} = \rho \vec{v}$ \\ 
-    Lien densité de courant volumique / Charge & $\text{d}Q = \vec{j}\cdot\text{d}\vec{S}\text{d}t$ \\ 
-    Maxwell Gauss & $\div(\vec{E}) = \dfrac{\rho}{\varepsilon_0}$ \\ 
-    Maxwell Thomson / Flux & $\div(\vec{B}) = 0$ \\ 
-    Maxwell Faraday & $\rot(\vec{E}) = -\dpv{\vec{B}}{t}$ \\ 
-    Maxwell Ampère & $\rot(\vec{B}) = \mu_0\vec{\j} + \mu_0 \varepsilon_0 \dpv{\vec{E}}{t}$ \\ 
-    Ostrogradski & $\displaystyle \iiint\limits_{\mathscr{V}_S}\div(\vec{F})\text{d}\tau = \varoiint\limits_{S}\vec{F}\cdot\text{d}\vec{S}$ \\  
-    Stokes & $\displaystyle \iint\limits_{S}\rot(\vec{F})\cdot\text{d}\vec{S}=\oint\limits_{\Gamma}\vec{F}\cdot \text{d}\vec{\ell}$ \\ 
-    Théorème de Gauss & $\displaystyle \varoiint\limits_{\mathscr{S}}\vec{E}\cdot\text{d}\vec{S} = \dfrac{Q_{\text{int}}}{\varepsilon_0}$ \\ 
-    Théorème d'Ampère & $\displaystyle \oint\limits_{\Gamma}\vec{B}\cdot\text{d}\vec{\mathscr{l}} = \mu_0 I_{\text{enl}}$ \\ 
-    Conservation de la charge (local) & $\dpv{\rho}{t} + \div(\vec{\j}) = 0$ \\ 
-    Conservation de la chage (Global) & $\displaystyle \dv{Q}{t} + \varoiint\limits_{S}\vec{\j}\cdot \text{d}\vec{S} = 0$ \\ 
-    Lien champ éléctrique potentiels & $\vec{E} = -\grad(V)$ \\ 
-    Lien champ éléctrique potentiels & $ \text{d}V = -\vec{E} \cdot \text{d}\vec{\mathscr{l}}$ \\ 
-    Pour une variable d'état $\mathcal{E}$ & $\displaystyle \Delta \mathcal{E} = \sum\limits_{i} \mathcal{E}_{i, \text{échangé}} + \mathcal{E}_{\text{crée}}$ \\ 
-    Pour une variable d'état (infinitésimal) $\mathcal{E}$ & $\displaystyle \text{d} \mathcal{E} = \sum\limits_{i} \delta\mathcal{E}_{i, \text{échangé}} + \delta \mathcal{E}_{\text{crée}}$ \\ 
-    Relations de passage à l'interface conducteur-vide & $\left\{\begin{matrix} \vec{E}_{\text{vide}}(M,t) = \dfrac{\sigma(M,t)}{\varepsilon_0}\vec{n}_{\text{conducteur} \to \text{vide}} \\ \vec{B}_{\text{vide}} = \mu_0 \vec{\j}_s(M,t)\wedge \vec{n}_{\text{conducteur} \to \text{vide}}\end{matrix}\right.$ \\
-    \bottomrule
-\end{tabular}
+    \begin{tabular}{@{}|p{9cm}|p{10cm}@{}|}
+
+        \multicolumn{2}{c}{\textbf{Électromagnétique}} \\ \hline
+
+    Vecteur densité de courant volumique & $\vec{\j} = qn^{*}\vec{v} = \rho \vec{v}$ \\ \hline 
+    Lien densité de courant volumique / Charge & $\text{d}Q = \vec{j}\cdot\text{d}\vec{S}\text{d}t$ \\ \hline 
+    Maxwell Gauss & $\div(\vec{E}) = \dfrac{\rho}{\varepsilon_0}$ \\ \hline 
+    Maxwell Thomson / Flux & $\div(\vec{B}) = 0$ \\ \hline 
+    Maxwell Faraday & $\rot(\vec{E}) = -\dpv{\vec{B}}{t}$ \\ \hline 
+    Maxwell Ampère & $\rot(\vec{B}) = \mu_0\vec{\j} + \mu_0 \varepsilon_0 \dpv{\vec{E}}{t}$ \\ \hline 
+    Ostrogradski & $\displaystyle \iiint\limits_{\mathscr{V}_S}\div(\vec{F})\text{d}\tau = \varoiint\limits_{S}\vec{F}\cdot\text{d}\vec{S}$ \\ \hline  
+    Stokes & $\displaystyle \iint\limits_{S}\rot(\vec{F})\cdot\text{d}\vec{S}=\oint\limits_{\Gamma}\vec{F}\cdot \text{d}\vec{\ell}$ \\ \hline 
+    Théorème de Gauss & $\displaystyle \varoiint\limits_{\mathscr{S}}\vec{E}\cdot\text{d}\vec{S} = \dfrac{Q_{\text{int}}}{\varepsilon_0}$ \\ \hline 
+    Théorème d'Ampère & $\displaystyle \oint\limits_{\Gamma}\vec{B}\cdot\text{d}\vec{\mathscr{l}} = \mu_0 I_{\text{enl}}$ \\ \hline 
+    Conservation de la charge (local) & $\dpv{\rho}{t} + \div(\vec{\j}) = 0$ \\ \hline 
+    Conservation de la chage (Global) & $\displaystyle \dv{Q}{t} + \varoiint\limits_{S}\vec{\j}\cdot \text{d}\vec{S} = 0$ \\ \hline 
+    Lien champ éléctrique potentiels & $\vec{E} = -\grad(V)$ \\ \hline 
+    Lien champ éléctrique potentiels & $ \text{d}V = -\vec{E} \cdot \text{d}\vec{\mathscr{l}}$ \\ \hline 
+    \end{tabular}
 \caption{Formules électromagnétique.}
 \label{tab:electromag}
 \end{table}
@@ -410,23 +404,36 @@ $\Delta$ un axe fixe, $\mathcal{D} \in \Delta$, $O, O', M$ des points de l'espac
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
-    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
-        \toprule
-        \multicolumn{2}{c}{\textbf{Dipôles non rayonnants}} \\
-        \midrule
-        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
-        \midrule
-        Moment dipolaire & $\vec p = q \vec{NP}$ \\
-        Potentiel Dipôle & $V = \dfrac{\vec{p} \cdot \vec{u_r}}{4\pi \varepsilon_0 r^2} = \dfrac{p\cos(\theta)}{4\pi \varepsilon_0 r^2}$ \\ 
-        Champ éléctrique, dipôle non rayonnant & $\vec{E} = \dfrac{p}{4\pi \varepsilon_0 r^3}(2\cos(\theta) \vec{u_r} + \sin(\theta) \vec{u_\theta})$ \\ 
-        Champ éléctrique dipôle non rayonnant, Forme intrinseque & $\vec{E} = \dfrac{1}{4\pi\varepsilon_0 r^5}(3(\vec{p} \cdot \vec{r})\vec{r} - r^2\vec{p})$ \\ 
-        Moment dûe à un champ éléctrostatique sur un dipôle \textit{rigide} non rayonnant & $\vec{\mathcal{M}_O}=\vec{p}\wedge \vec{E}_{\text{ext}}$ \\
-        Énergie potentielle dûe à l'action éléstrostatique d'un champ uniforme sur un dipôle \textit{rigide} non rayonnant & $\mathcal{E}_{\text{p}} = -\vec{p}\cdot\vec{E}_{\text{ext}}$\\
-        Force exercée par un champ electrostatique sur un dipôle non rayonnant au point $O$ & $\vec{F}_{E_{\text{ext}\longrightarrow\text{dip}}} = \left(\vec{p}\cdot\grad\right)\vec{E}_{\text{ext}}(O)$\\
-        Analogie champ éléctrique $/$ magnétique & $\dfrac{1}{\varepsilon_0} \longleftrightarrow \mu_0$ et $\vec{p} \longleftrightarrow \vec{M}$ \\
+    \begin{tabular}{@{}|p{9cm}|p{10cm}@{}|}
+
+        \multicolumn{2}{c}{\textbf{Électromagnétique (Tableau 2)}} \\ \hline
+
+    Pour une variable d'état $\mathcal{E}$ & $\displaystyle \Delta \mathcal{E} = \sum\limits_{i} \mathcal{E}_{i, \text{échangé}} + \mathcal{E}_{\text{crée}}$ \\ \hline 
+    Pour une variable d'état (infinitésimal) $\mathcal{E}$ & $\displaystyle \text{d} \mathcal{E} = \sum\limits_{i} \delta\mathcal{E}_{i, \text{échangé}} + \delta \mathcal{E}_{\text{crée}}$ \\ \hline 
+    Relations de passage à l'interface conducteur-vide & $\left\{\begin{matrix} \vec{E}_{\text{vide}}(M,t) = \dfrac{\sigma(M,t)}{\varepsilon_0}\vec{n}_{\text{conducteur} \to \text{vide}} \\ \vec{B}_{\text{vide}} = \mu_0 \vec{\j}_s(M,t)\wedge \vec{n}_{\text{conducteur} \to \text{vide}}\end{matrix}\right.$ \\ \hline
+    \end{tabular}
+\caption{Formules électromagnétique. (Tableau 2)}
+\label{tab:electromag2}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Increase row spacing
+    \setlength{\tabcolsep}{8pt} % Adjust column padding
+    \begin{tabular}{@{}|p{9cm}|p{10cm}@{}|}
+
+        \multicolumn{2}{c}{\textbf{Dipôles non rayonnants}} \\ \hline
+
+        Moment dipolaire & $\vec p = q \vec{NP}$ \\ \hline
+        Potentiel Dipôle & $V = \dfrac{\vec{p} \cdot \vec{u_r}}{4\pi \varepsilon_0 r^2} = \dfrac{p\cos(\theta)}{4\pi \varepsilon_0 r^2}$ \\ \hline 
+        Champ éléctrique, dipôle non rayonnant & $\vec{E} = \dfrac{p}{4\pi \varepsilon_0 r^3}(2\cos(\theta) \vec{u_r} + \sin(\theta) \vec{u_\theta})$ \\ \hline 
+        Champ éléctrique dipôle non rayonnant, Forme intrinseque & $\vec{E} = \dfrac{1}{4\pi\varepsilon_0 r^5}(3(\vec{p} \cdot \vec{r})\vec{r} - r^2\vec{p})$ \\ \hline 
+        Moment dûe à un champ éléctrostatique sur un dipôle \textit{rigide} non rayonnant & $\vec{\mathcal{M}_O}=\vec{p}\wedge \vec{E}_{\text{ext}}$ \\ \hline
+        Énergie potentielle dûe à l'action éléstrostatique d'un champ uniforme sur un dipôle \textit{rigide} non rayonnant & $\mathcal{E}_{\text{p}} = -\vec{p}\cdot\vec{E}_{\text{ext}}$\\ \hline
+        Force exercée par un champ electrostatique sur un dipôle non rayonnant au point $O$ & $\vec{F}_{E_{\text{ext}\longrightarrow\text{dip}}} = \left(\vec{p}\cdot\grad\right)\vec{E}_{\text{ext}}(O)$\\ \hline
+        Analogie champ éléctrique $/$ magnétique & $\dfrac{1}{\varepsilon_0} \longleftrightarrow \mu_0$ et $\vec{p} \longleftrightarrow \vec{M}$ \\ \hline
                 
-    \bottomrule
-\end{tabular}
+    \end{tabular}
 \caption{Dipôles non rayonnants.}
 \label{tab:denr}
 \end{table}
@@ -436,25 +443,22 @@ $\Delta$ un axe fixe, $\mathcal{D} \in \Delta$, $O, O', M$ des points de l'espac
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
-    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
-        \toprule
-        \multicolumn{2}{c}{\textbf{Formule d'énergétique électromagnétique}} \\
-        \midrule
-        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
-        \midrule
-    Force de Lorentz & $\vec{F}_{\text{Lorentz}} = q \left(\vec{E} + \vec{v} \wedge \vec{E}\right)$ \\ 
-    Force de Lorentz volumique & $\vec{{f}}_{\text{Lorentz}} = \rho \vec{E} + \vec{\j}\wedge \vec{B}$ \\ 
-    Force de Laplace & $\vec{F_\mathscr{L}}=i\vec{L}\wedge \vec{B}$ \\ 
-    Force de Drude & $\vec{F}_{\text{Drude}} = -\dfrac{m_i}{\tau_i}\vec{v_i}$ \\ 
-    Loi d'Ohm locale & $\vec{\j} = \gamma \vec{E}, \ \gamma = \sum\limits_{i}\dfrac{n_i^{*}\tau_i q_i^2}{m_i}$ \\ 
-    Lien puissance (Volumique) Lorentz / Drude & $p_{\text{lorentz}} = \vec{\j}\cdot\vec{E} = -p_{\text{Drude}}$ \\ 
-    Densité volumique énergétique éléctromagnétique & $\displaystyle e_{\text{em}} \text{ tel que } \mathcal{E}_{\text{em}} = \iiint\limits_{M\in V}e_{\text{em}} \text{d}\mathscr{V}$ \\ 
-    Conservation de l'énergie éléctromagnétique (Globale) & $\displaystyle\dv{\mathcal{E}_{\text{em}}}{t} + \varoiint\limits_{S_{\mathscr{V}}} \vec{\Pi} \cdot \text{d} \vec{S} = -\mathscr{P}_{\text{Lorentz}}$ \\ 
-    Conservation de l'énergie éléctromagnétique (Local) & $\displaystyle \dpv{e_{\text{em}}}{dt} + \div(\vec{\Pi}) = - \vec{p}_{\text{Lorentz}}$ \\ 
-    Formule pour $e_{\text{em}}$ & $e_{\text{em}} = \dfrac{\varepsilon_0E^2}{2} + \dfrac{B^2}{2\mu_0}$ \\ 
-    Vecteur de Poynting & $\vec{\Pi} = \dfrac{\vec{E} \wedge \vec{B}}{\mu_0}$ \\ 
-    \bottomrule
-\end{tabular}
+    \begin{tabular}{@{}|p{9cm}|p{10cm}@{}|}
+
+        \multicolumn{2}{c}{\textbf{Formule d'énergétique électromagnétique}} \\ \hline
+
+    Force de Lorentz & $\vec{F}_{\text{Lorentz}} = q \left(\vec{E} + \vec{v} \wedge \vec{E}\right)$ \\ \hline 
+    Force de Lorentz volumique & $\vec{{f}}_{\text{Lorentz}} = \rho \vec{E} + \vec{\j}\wedge \vec{B}$ \\ \hline 
+    Force de Laplace & $\vec{F_\mathscr{L}}=i\vec{L}\wedge \vec{B}$ \\ \hline 
+    Force de Drude & $\vec{F}_{\text{Drude}} = -\dfrac{m_i}{\tau_i}\vec{v_i}$ \\ \hline 
+    Loi d'Ohm locale & $\vec{\j} = \gamma \vec{E}, \ \gamma = \sum\limits_{i}\dfrac{n_i^{*}\tau_i q_i^2}{m_i}$ \\ \hline 
+    Lien puissance (Volumique) Lorentz / Drude & $p_{\text{lorentz}} = \vec{\j}\cdot\vec{E} = -p_{\text{Drude}}$ \\ \hline 
+    Densité volumique énergétique éléctromagnétique & $\displaystyle e_{\text{em}} \text{ tel que } \mathcal{E}_{\text{em}} = \iiint\limits_{M\in V}e_{\text{em}} \text{d}\mathscr{V}$ \\ \hline 
+    Conservation de l'énergie éléctromagnétique (Globale) & $\displaystyle\dv{\mathcal{E}_{\text{em}}}{t} + \varoiint\limits_{S_{\mathscr{V}}} \vec{\Pi} \cdot \text{d} \vec{S} = -\mathscr{P}_{\text{Lorentz}}$ \\ \hline 
+    Conservation de l'énergie éléctromagnétique (Local) & $\displaystyle \dpv{e_{\text{em}}}{dt} + \div(\vec{\Pi}) = - \vec{p}_{\text{Lorentz}}$ \\ \hline 
+    Formule pour $e_{\text{em}}$ & $e_{\text{em}} = \dfrac{\varepsilon_0E^2}{2} + \dfrac{B^2}{2\mu_0}$ \\ \hline 
+    Vecteur de Poynting & $\vec{\Pi} = \dfrac{\vec{E} \wedge \vec{B}}{\mu_0}$ \\ \hline 
+    \end{tabular}
 \caption{Energie éléctromagnétique}
 \label{tab:elec_energie}
 \end{table}
@@ -463,27 +467,24 @@ $\Delta$ un axe fixe, $\mathcal{D} \in \Delta$, $O, O', M$ des points de l'espac
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
-    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
-        \toprule
-        \multicolumn{2}{c}{\textbf{Dipôles Rayonnants}} \\
-        \midrule
-        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
-        \midrule
-        Moment dipôlaire atome soumis à un champ éléctrique & $\vec p = \dfrac{(Ze)^2}{m\omega_0^2}E_0\cos(\omega t)\vec e_x$ \\
-        Approximation dipolaire & $r \gg a$ \\ 
-        Dans l'approximation non relativiste & $a\omega \ll c$ \\
-        Zone de rayonnement (Zone de champ lointaine) & $r \gg \lambda$ \\
-        À l'onde exitatrice $\vec E_{\text{ext}}$ est associé $\omega$ et $\lambda$ tel que & $\lambda f = c \ \ \lambda\dfrac{\omega}{2\pi} = c \ \ \omega = \dfrac{2\pi c}{\lambda}$ \\
-        Pour prendre en compte le temps de propagation de l'onde, on définit & $\xi = t - \frac{r}{c}$ \\
-        Expression des champs éléctromagnétiques dans cette zone & $\left\{ \begin{array}{l} \vec E (M,t) = \dfrac{\sin \theta}{4\pi \varepsilon r^3} \left(\dfrac{r}{c}\right)^2 p''(\xi)\vec e_{\theta} \\ \vec B (M,t) = \dfrac{\sin \theta}{4\pi \varepsilon_0 r^3 c}\left(\dfrac{r}{c}\right)^2 p''(\xi) \vec e_{\varphi}\end{array}\right.$ \\
-        Puissance rayonnée & $\av{\vec{\Pi} (M,t)}{t} = \dfrac{p_0^2 \omega^4 \sin^2 \theta}{32 \pi^2 \varepsilon_0 c^3 r^2}\vec e_r$ \\
-        Puissance moyenne, sphère rayon $r$, centré sur le dipôle & $\displaystyle \mathcal{P} = \iint\limits_{\text{Sphère}} \av{\vec \Pi (M,t)}{t} \cdot \vec{\d S} = \dfrac{p_0^2 \omega^4}{12\pi \varepsilon_0 c^3}$ \\
-        Régime Rayleigh (Régime basse fréquence) & $\omega^2 \ll \omega_0^2$ et donc, $p_0(\omega) = \dfrac{(Ze)^2E_0}{m\omega_0^2}$ \\
-        Puissance de Larmor & $\mathcal P_{\text{Larmor}} = \dfrac{q^2}{4\pi \varepsilon_0} \times \dfrac{2\av{p^2}{}}{3c^2}$ \\
+    \begin{tabular}{@{}|p{9cm}|p{10cm}@{}|}
+
+        \multicolumn{2}{c}{\textbf{Dipôles Rayonnants}} \\ \hline
+
+        Moment dipôlaire atome soumis à un champ éléctrique & $\vec p = \dfrac{(Ze)^2}{m\omega_0^2}E_0\cos(\omega t)\vec e_x$ \\ \hline
+        Approximation dipolaire & $r \gg a$ \\ \hline 
+        Dans l'approximation non relativiste & $a\omega \ll c$ \\ \hline
+        Zone de rayonnement (Zone de champ lointaine) & $r \gg \lambda$ \\ \hline
+        À l'onde exitatrice $\vec E_{\text{ext}}$ est associé $\omega$ et $\lambda$ tel que & $\lambda f = c \ \ \lambda\dfrac{\omega}{2\pi} = c \ \ \omega = \dfrac{2\pi c}{\lambda}$ \\ \hline
+        Pour prendre en compte le temps de propagation de l'onde, on définit & $\xi = t - \frac{r}{c}$ \\ \hline
+        Expression des champs éléctromagnétiques dans cette zone & $\left\{ \begin{array}{l} \vec E (M,t) = \dfrac{\sin \theta}{4\pi \varepsilon r^3} \left(\dfrac{r}{c}\right)^2 p''(\xi)\vec e_{\theta} \\ \hline \vec B (M,t) = \dfrac{\sin \theta}{4\pi \varepsilon_0 r^3 c}\left(\dfrac{r}{c}\right)^2 p''(\xi) \vec e_{\varphi}\end{array}\right.$ \\ \hline
+        Puissance rayonnée & $\av{\vec{\Pi} (M,t)}{t} = \dfrac{p_0^2 \omega^4 \sin^2 \theta}{32 \pi^2 \varepsilon_0 c^3 r^2}\vec e_r$ \\ \hline
+        Puissance moyenne, sphère rayon $r$, centré sur le dipôle & $\displaystyle \mathcal{P} = \iint\limits_{\text{Sphère}} \av{\vec \Pi (M,t)}{t} \cdot \vec{\d S} = \dfrac{p_0^2 \omega^4}{12\pi \varepsilon_0 c^3}$ \\ \hline
+        Régime Rayleigh (Régime basse fréquence) & $\omega^2 \ll \omega_0^2$ et donc, $p_0(\omega) = \dfrac{(Ze)^2E_0}{m\omega_0^2}$ \\ \hline
+        Puissance de Larmor & $\mathcal P_{\text{Larmor}} = \dfrac{q^2}{4\pi \varepsilon_0} \times \dfrac{2\av{p^2}{}}{3c^2}$ \\ \hline
 
 
-    \bottomrule
-\end{tabular}
+    \end{tabular}
 \caption{Dipôles Rayonnants}
 \label{tab:der}
 \end{table}
@@ -492,24 +493,21 @@ $\Delta$ un axe fixe, $\mathcal{D} \in \Delta$, $O, O', M$ des points de l'espac
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
-    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
-        \toprule
-        \multicolumn{2}{c}{\textbf{Ondes éléctromagnétiques dans l'ionosphère}} \\
-        \midrule
-        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
-        \midrule
-        Hypothèses sur le plasma & $\begin{array}{l}\text{Dilué: On néglige la force de drude} \\ \text{Neutre: Il y a autant de charges} + \text{que de } - \\ \text{Non relativistes: Vitesses faibles devant} c\end{array}$ \\
-        Équations de Maxwell dans le plasma & $\begin{matrix}(MG): \div \vec{E} = 0 & (MF): \rot\vec{E} = -\dpv{\vec{B}}{t} \\ (MT): \div \vec{B} = 0 & (MA): \rot \vec{B} = \mu_0 \underline {\vec \j} + \dfrac{1}{c^2}\dpv{\underline {\vec E}}{t}\end{matrix}$ \\
-        Conductivité complexe du plasma & $\underline {\vec \j} = \underline \gamma \underline {\vec E}  = \dfrac{ne^2}{mi\omega} \underline {\vec E}$ \\
-        Pulsation Plasma (Pulsation de coupure) & $\omega_p = \sqrt{\dfrac{ne^2}{m\varepsilon_0}}$ \\
-        Relation de dispersion dans le plasma (C'est Kleine Gordon !)& $\underline k ^2 = \dfrac{\omega^2 - \omega_p^2}{c^2}$ \\
-        Indice Optique & $n(\omega) = \dfrac{c}{|v_{\varphi}(\omega)|}$ \\
-        Rappel: Formule de Rayleigh & $v_g = v_{\varphi} + k'\dv{v_{\varphi}}{k'}$ \\
-        Formule de Rayleigh, version avec $n$ & $v_g = \dfrac{\pm c}{n+\omega\dv{n}{\omega}}$ \\ 
-        Dispertion anormale (Impossible dans le plasma): Dans ce cas, $v_g$ ne définit pas la vitesse de transport de l'information & $\dv{n}{\omega} < 0$ et $v_{\varphi} > c$\\
-        Ordre de grandeur: Fréquence de coupure $f_p$ dans l'ionosphère terrestre & $f_p \simeq \num{10}\unit{\MHz}$ \\
-    \bottomrule
-\end{tabular}
+    \begin{tabular}{@{}|p{9cm}|p{10cm}@{}|}
+
+        \multicolumn{2}{c}{\textbf{Ondes éléctromagnétiques dans l'ionosphère}} \\ \hline
+
+        Hypothèses sur le plasma & $\begin{array}{l}\text{Dilué: On néglige la force de drude} \\ \hline \text{Neutre: Il y a autant de charges} + \text{que de } - \\ \hline \text{Non relativistes: Vitesses faibles devant} c\end{array}$ \\ \hline
+        Équations de Maxwell dans le plasma & $\begin{matrix}(MG): \div \vec{E} = 0 & (MF): \rot\vec{E} = -\dpv{\vec{B}}{t} \\ \hline (MT): \div \vec{B} = 0 & (MA): \rot \vec{B} = \mu_0 \underline {\vec \j} + \dfrac{1}{c^2}\dpv{\underline {\vec E}}{t}\end{matrix}$ \\ \hline
+        Conductivité complexe du plasma & $\underline {\vec \j} = \underline \gamma \underline {\vec E}  = \dfrac{ne^2}{mi\omega} \underline {\vec E}$ \\ \hline
+        Pulsation Plasma (Pulsation de coupure) & $\omega_p = \sqrt{\dfrac{ne^2}{m\varepsilon_0}}$ \\ \hline
+        Relation de dispersion dans le plasma (C'est Kleine Gordon !)& $\underline k ^2 = \dfrac{\omega^2 - \omega_p^2}{c^2}$ \\ \hline
+        Indice Optique & $n(\omega) = \dfrac{c}{|v_{\varphi}(\omega)|}$ \\ \hline
+        Rappel: Formule de Rayleigh & $v_g = v_{\varphi} + k'\dv{v_{\varphi}}{k'}$ \\ \hline
+        Formule de Rayleigh, version avec $n$ & $v_g = \dfrac{\pm c}{n+\omega\dv{n}{\omega}}$ \\ \hline 
+        Dispertion anormale (Impossible dans le plasma): Dans ce cas, $v_g$ ne définit pas la vitesse de transport de l'information & $\dv{n}{\omega} < 0$ et $v_{\varphi} > c$\\ \hline
+        Ordre de grandeur: Fréquence de coupure $f_p$ dans l'ionosphère terrestre & $f_p \simeq \num{10}\unit{\MHz}$ \\ \hline
+    \end{tabular}
 \caption{Ondes éléctromagnétiques dans l'ionosphère}
 \label{tab:ohm_iono}
 \end{table}
@@ -521,37 +519,47 @@ On se limite à des signaux lentements variables (En basse fréquence)
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
-    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
-        \toprule
-        \multicolumn{2}{c}{\textbf{Ondes éléctromagnétiques dans les conducteurs Ohmiques}} \\
-        \midrule
-        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
-        \midrule
-        TRD appliqué au porteur mobile moyen $e^-$ libre: & $m\dv{\vec{v}}{t} = -e\vec{E} - \frac{m}{\tau}\vec{v}$ \\
-        Relation ``ohmique'' & $\vec{\underline{\j}} =\dfrac{\gamma_0}{1+i\tau\omega}\vec{\underline{E}} = \dfrac{\frac{ne^2\tau}{m}}{1+i\tau\omega}\vec{\underline{E}}$ \\
-        Approximation basse fréquence & $\tau\omega \ll 1, \ \dfrac{\omega\varepsilon_0}{\gamma_0}\ll1$ \\ 
-        Ordre de grandeur de $\omega$ pour le cuivre à $\num{100} \unit{\kelvin}$ & $\num{1e14} \unit{\radian\per\second}$ \\
-        Cette approximation est vérifiée lorsque (Radiofréquences) & $\omega \ll \num{1e14}\unit{\radian\per\second}$ \\
-        Radiofréquences: & $f \lesssim \num{1e9}\unit{\Hz}$ \\
-        Équations de Maxwell dans l'ARQS & $\begin{matrix}(MG): \div \vec{E} = 0 & (MF): \rot\vec{E} = -\dpv{\vec{B}}{t} \\ (MT): \div \vec{B} = 0 & (MA): \rot \vec{B} = \mu_0\gamma_0\vec{E}\end{matrix}$ \\
-        Relation de dispertion (Obtenue en injectant (MF) dans (MA))& $\underline{k}^2 = -i\mu_0\gamma_0\omega (\text{On a posé} \underline{k} = k'-ik'')$ \\
-        Expression du champ éléctrique & $\vec{E}(M,t )=\vec{E_0}e^{-\frac{u}{\delta}}\cos\left(\omega t - \dfrac{u}{\delta} + \Phi\right)$ \\
-        Rappel: Distance caractéristique d'atténuation: & $\delta = \dfrac{1}{|k''(\omega)|}$ \\ 
-        Ordres de grandeur de $\delta$ & $\begin{array}{|c||c|c|} \hline \text{mat / freq} & \num{1}\unit{\kHz} & \num{1}\unit{\GHz} \\ \hline \text{cuivre} & \delta = \num{2}\unit{\mm} & \delta = \num{2}\unit{\micro\meter} \\ \text{fonte} & \delta =  \num{2}\unit{\cm} & \delta = \num{20}\unit{\micro\meter} \\ \hline \end{array}$ \\ 
-        Conducteur parfait: & $\vec{E}(M,t) = 0$ au sein du conducteur \\ 
-        Une OemPPM en incidence normale réféchie vérifie & \begin{itemize}\item même amplitude \item même pulsation \item même polarisation \item vecteurs d'ondes de même direction mais opposés \item La réfléction s'accompagne d'un déphasage de $\pi$\end{itemize} \\
-        Coefficient de réfléction en amplitude & $\underline \Omega =\dfrac{\text{Amplitude complexe de } \underline{E}_r \text{à l'interface}}{\text{Amplitude complexe de }\underline{E}_i \text{à l'interface}}$ \\
-        Transition & $\underline t =\dfrac{\underline{E}_r(\text{interface})}{\underline{E}_i(\text{interface})}$ \\ 
-        Dans le modèle du conducteur parfait & $\delta = 0, \ \gamma\to+\infty, \ \ \underline{\Omega} = -1, \ \ \underline t = 0$ \\
-        Stationairité des ondes du coté du vide & $\left\{ \begin{array}{l}\vec{B}_\text{vide} = \dfrac{2E_0}{c}\cos(\omega t + \varphi) \cos(ku)(\vec{e_u}\wedge \vec{e_p}) \\ \vec{E}_{\text{vide}} = 2E_0 \sin(\omega t + \varphi) \sin(ku)\vec{e_p} \end{array}\right.$ \\
-        Densité d'énergie éléctromagnétique moyenne & $\av{e_{em}(M,t)}{t} = \varepsilon_0E_0^2$ \\
-        Vecteur de Poynting moyen & $\av{\vec{\Pi}(M,t)}{t} = \vec{0}$ \\
-        
+    \begin{tabular}{@{}|p{9cm}|p{10cm}@{}|}
 
-    \bottomrule
-\end{tabular}
+        \multicolumn{2}{c}{\textbf{Ondes éléctromagnétiques dans les conducteurs Ohmiques}} \\ \hline
+
+        TRD appliqué au porteur mobile moyen $e^-$ libre: & $m\dv{\vec{v}}{t} = -e\vec{E} - \frac{m}{\tau}\vec{v}$ \\ \hline
+        Relation ``ohmique'' & $\vec{\underline{\j}} =\dfrac{\gamma_0}{1+i\tau\omega}\vec{\underline{E}} = \dfrac{\frac{ne^2\tau}{m}}{1+i\tau\omega}\vec{\underline{E}}$ \\ \hline
+        Approximation basse fréquence & $\tau\omega \ll 1, \ \dfrac{\omega\varepsilon_0}{\gamma_0}\ll1$ \\ \hline 
+        Ordre de grandeur de $\omega$ pour le cuivre à $\num{100} \unit{\kelvin}$ & $\num{1e14} \unit{\radian\per\second}$ \\ \hline
+        Cette approximation est vérifiée lorsque (Radiofréquences) & $\omega \ll \num{1e14}\unit{\radian\per\second}$ \\ \hline
+        Radiofréquences: & $f \lesssim \num{1e9}\unit{\Hz}$ \\ \hline
+        Équations de Maxwell dans l'ARQS & $\begin{matrix}(MG): \div \vec{E} = 0 & (MF): \rot\vec{E} = -\dpv{\vec{B}}{t} \\ \hline (MT): \div \vec{B} = 0 & (MA): \rot \vec{B} = \mu_0\gamma_0\vec{E}\end{matrix}$ \\ \hline
+        Relation de dispertion (Obtenue en injectant (MF) dans (MA))& $\underline{k}^2 = -i\mu_0\gamma_0\omega (\text{On a posé} \underline{k} = k'-ik'')$ \\ \hline
+        Expression du champ éléctrique & $\vec{E}(M,t )=\vec{E_0}e^{-\frac{u}{\delta}}\cos\left(\omega t - \dfrac{u}{\delta} + \Phi\right)$ \\ \hline
+        Rappel: Distance caractéristique d'atténuation: & $\delta = \dfrac{1}{|k''(\omega)|}$ \\ \hline 
+        Ordres de grandeur de $\delta$ & $\begin{array}{|c||c|c|} \hline \text{mat / freq} & \num{1}\unit{\kHz} & \num{1}\unit{\GHz} \\ \hline \hline \text{cuivre} & \delta = \num{2}\unit{\mm} & \delta = \num{2}\unit{\micro\meter} \\ \hline \text{fonte} & \delta =  \num{2}\unit{\cm} & \delta = \num{20}\unit{\micro\meter} \\ \hline \hline \end{array}$ \\ \hline 
+        Conducteur parfait: & $\vec{E}(M,t) = 0$ au sein du conducteur \\ \hline 
+        Une OemPPM en incidence normale réféchie vérifie & \begin{itemize}\item même amplitude \item même pulsation \item même polarisation \item vecteurs d'ondes de même direction mais opposés \item La réfléction s'accompagne d'un déphasage de $\pi$\end{itemize} \\ \hline
+        Coefficient de réfléction en amplitude & $\underline \Omega =\dfrac{\text{Amplitude complexe de } \underline{E}_r \text{à l'interface}}{\text{Amplitude complexe de }\underline{E}_i \text{à l'interface}}$ \\ \hline
+    \end{tabular}
 \caption{Ondes éléctromagnétiques dans les conducteurs Ohmiques}
 \label{tab:ohm_elec}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Increase row spacing
+    \setlength{\tabcolsep}{8pt} % Adjust column padding
+    \begin{tabular}{@{}|p{9cm}|p{10cm}@{}|}
+
+        \multicolumn{2}{c}{\textbf{Ondes éléctromagnétiques dans les conducteurs Ohmiques (Tableau 2)}} \\ \hline
+
+        Transition & $\underline t =\dfrac{\underline{E}_r(\text{interface})}{\underline{E}_i(\text{interface})}$ \\ \hline 
+        Dans le modèle du conducteur parfait & $\delta = 0, \ \gamma\to+\infty, \ \ \underline{\Omega} = -1, \ \ \underline t = 0$ \\ \hline
+        Stationairité des ondes du coté du vide & $\left\{ \begin{array}{l}\vec{B}_\text{vide} = \dfrac{2E_0}{c}\cos(\omega t + \varphi) \cos(ku)(\vec{e_u}\wedge \vec{e_p}) \\ \hline \vec{E}_{\text{vide}} = 2E_0 \sin(\omega t + \varphi) \sin(ku)\vec{e_p} \end{array}\right.$ \\ \hline
+        Densité d'énergie éléctromagnétique moyenne & $\av{e_{em}(M,t)}{t} = \varepsilon_0E_0^2$ \\ \hline
+        Vecteur de Poynting moyen & $\av{\vec{\Pi}(M,t)}{t} = \vec{0}$ \\ \hline
+        
+
+    \end{tabular}
+\caption{Ondes éléctromagnétiques dans les conducteurs Ohmiques (Tableau 2)}
+\label{tab:ohm_elec2}
 \end{table}
 
 
@@ -560,22 +568,19 @@ On se limite à des signaux lentements variables (En basse fréquence)
     Avec $j$ l'unité complexe de partie imaginaire positive. $\left(j^2 = -1, \Im(j)=1\right)$. On pose $x = \dfrac{\omega}{\omega_0}$
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
-    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
-        \toprule
-        \multicolumn{2}{c}{\textbf{Filtrage}} \\
-        \midrule
-        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
-        \midrule
-        Fonction de transfert complexe & $\underline{H} = \dfrac{\underline{s}}{\underline{e}}$ \\
-        FC\footnote{forme cannonique}: Passe bas du premier ordre & $\underbar{H} = \dfrac{H_0}{1+jx}$ \\
-        FC: Passe haut du premier ordre & $\underbar{H} = \dfrac{H_0jx}{1+jx}$ \\ 
-        FC: Passe bas du second ordre & $\underbar{H} = \dfrac{H_0}{1-\left(x\right)^2 + j\frac{x}{Q}}$ \\
-        FC: Passe haut du second ordre & $\underbar{H} = \dfrac{H_0\left(x\right)^2}{1-\left(x\right)^2 + j\frac{x}{Q}}$ \\
-        FC: Passe bande & $\underbar{H} = \dfrac{H_0}{1+jQ\left(x-\frac{1}{x}\right)}$ \\ 
-        Remarque & \textit{Pour passer d'un filtre passe haut à un filtre passe bas, il suffit de multiplier le numérateur par le terme prédominant en $x$ au denominateur !} \\ 
-        Bande passante & $\Delta\omega = \frac{\omega_0}{Q}$ et $\Delta f=\frac{f_0}{Q}$\\
-    \bottomrule
-\end{tabular}
+    \begin{tabular}{@{}|p{9cm}|p{10cm}@{}|}
+
+        \multicolumn{2}{c}{\textbf{Filtrage}} \\ \hline
+
+        Fonction de transfert complexe & $\underline{H} = \dfrac{\underline{s}}{\underline{e}}$ \\ \hline
+        FC\footnote{forme cannonique}: Passe bas du premier ordre & $\underbar{H} = \dfrac{H_0}{1+jx}$ \\ \hline
+        FC: Passe haut du premier ordre & $\underbar{H} = \dfrac{H_0jx}{1+jx}$ \\ \hline 
+        FC: Passe bas du second ordre & $\underbar{H} = \dfrac{H_0}{1-\left(x\right)^2 + j\frac{x}{Q}}$ \\ \hline
+        FC: Passe haut du second ordre & $\underbar{H} = \dfrac{H_0\left(x\right)^2}{1-\left(x\right)^2 + j\frac{x}{Q}}$ \\ \hline
+        FC: Passe bande & $\underbar{H} = \dfrac{H_0}{1+jQ\left(x-\frac{1}{x}\right)}$ \\ \hline 
+        Remarque & \textit{Pour passer d'un filtre passe haut à un filtre passe bas, il suffit de multiplier le numérateur par le terme prédominant en $x$ au denominateur !} \\ \hline 
+        Bande passante & $\Delta\omega = \frac{\omega_0}{Q}$ et $\Delta f=\frac{f_0}{Q}$\\ \hline
+    \end{tabular}
 \caption{Filtrage d'un signal periodique en RSF}
 \label{tab:filtrage}
 \end{table}
@@ -589,25 +594,22 @@ On se limite à des signaux lentements variables (En basse fréquence)
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
-    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
-        \toprule
-        \multicolumn{2}{c}{\textbf{Optique Ondulatoire}} \\
-        \midrule
-        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
-        \midrule
-        Longueur d'onde dans le vide (Resp. vecteur d'onde)& $\lambda_0 \ (\text{resp\ } k_0)$\\
-        Rappel: Relation de Plank Einstein: & $\mathcal{E}=\hbar\nu=\hbar\omega=\dfrac{2\pi\hbar}{\lambda_0}$\\
-        Onde lumineuse monochromatique: & $\underline{\psi}(M,t)=\Psi(M)e^{i(\omega t - \varphi(M))}$ \\
-        Retard de phase: & $\varphi(M)=\tau_{\mathrm{SM}}+\varphi(S)$ \\
-        Retard de phase (2) : & $\displaystyle \tau_{\mathrm{SM}}=\int_{\Gamma_{SM}}\dfrac{\d\mathscr{l}}{v_{\varphi}}=\int_{\Gamma_{SM}} \dfrac{n\d\mathscr{l}}{c}=\frac{1}{c}\int_{\Gamma_{SM}}n\d\mathscr{l}=\frac{1}{c}(SM)$ \\
-        Intensité lumineuse : & $\displaystyle I(M)=k \cdot\langle \psi^2 (M,t)\rangle_{\tau_r} = \frac{k }{\tau_r}\int_t^{t+\tau_r}\psi^2(M,u)\d u, \ k = c\varepsilon_0 $ Note: à l'usage, on ne prends pas en compte le $k$. $\tau_r$ le temps de réponse du capteur.\\
-        Ordre de grandeur de $\tau_r$ : & $\tau_{r,\text{oeuil humain}} = \num{1e-1}=\num{.1}\unit{\second} \ \ \tau_{r, \text{capteur CCD}} =\num{1e-6}\unit{\second}$ \\
-        Pour une onde monochromatique: & $I(M)=\dfrac{\psi^2(M)}{2}$ \\
-        Durée de cohérence & $\tau_c=\inv{\Delta\nu}=\pi\tau$\\
+    \begin{tabular}{@{}|p{9cm}|p{10cm}@{}|}
+
+        \multicolumn{2}{c}{\textbf{Optique Ondulatoire}} \\ \hline
+
+        Longueur d'onde dans le vide (Resp. vecteur d'onde)& $\lambda_0 \ (\text{resp\ } k_0)$\\ \hline
+        Rappel: Relation de Plank Einstein: & $\mathcal{E}=\hbar\nu=\hbar\omega=\dfrac{2\pi\hbar}{\lambda_0}$\\ \hline
+        Onde lumineuse monochromatique: & $\underline{\psi}(M,t)=\Psi(M)e^{i(\omega t - \varphi(M))}$ \\ \hline
+        Retard de phase: & $\varphi(M)=\tau_{\mathrm{SM}}+\varphi(S)$ \\ \hline
+        Retard de phase (2) : & $\displaystyle \tau_{\mathrm{SM}}=\int_{\Gamma_{SM}}\dfrac{\d\mathscr{l}}{v_{\varphi}}=\int_{\Gamma_{SM}} \dfrac{n\d\mathscr{l}}{c}=\frac{1}{c}\int_{\Gamma_{SM}}n\d\mathscr{l}=\frac{1}{c}(SM)$ \\ \hline
+        Intensité lumineuse : & $\displaystyle I(M)=k \cdot\langle \psi^2 (M,t)\rangle_{\tau_r} = \frac{k }{\tau_r}\int_t^{t+\tau_r}\psi^2(M,u)\d u, \ k = c\varepsilon_0 $ Note: à l'usage, on ne prends pas en compte le $k$. $\tau_r$ le temps de réponse du capteur.\\ \hline
+        Ordre de grandeur de $\tau_r$ : & $\tau_{r,\text{oeuil humain}} = \num{1e-1}=\num{.1}\unit{\second} \ \ \tau_{r, \text{capteur CCD}} =\num{1e-6}\unit{\second}$ \\ \hline
+        Pour une onde monochromatique: & $I(M)=\dfrac{\psi^2(M)}{2}$ \\ \hline
+        Durée de cohérence & $\tau_c=\inv{\Delta\nu}=\pi\tau$\\ \hline
         
 
-    \bottomrule
-\end{tabular}
+    \end{tabular}
 \caption{Optique ondulatoire}
 \label{tab:onduoptique}
 \end{table}
@@ -616,19 +618,16 @@ On se limite à des signaux lentements variables (En basse fréquence)
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
-    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
-        \toprule
-        \multicolumn{2}{c}{\textbf{Dispositif interferenciels des trous d'Young || Dispositif interferenciels à élargissement des fronts d'onde}} \\
-        \midrule
-        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
-        \midrule
-        Interférences à grande distance: Dans l'hyposthèse où $M$ \textit{est à grande distance} des points $S_1$ et $S_2$& $a \ll D $ et $|x|, |y| \ll D$ \\
-        Difference de marche à grande distance dans le dispositif des trous d'Young: & $\delta_{1/2}(M) = n\dfrac{ax}{D}$ \\
-        Difference de marche à grande distance dans le montage de Frauhofer: & $\delta_{1/2}(M) = n\dfrac{ax}{f'_2}$ \\
-        Critère de brouillage par extension spatiale d'une fente source primaire, et critère de brouillage par extension spectrale de la source: & $|\Delta p|\gtrsim 1$ \\
-        Perte de contraste par élargissement angulaire de la source & $\theta_{\mathrm{source}}\simeq \dfrac{\lambda}{a}$\\
-    \bottomrule
-\end{tabular}
+    \begin{tabular}{@{}|p{9cm}|p{10cm}@{}|}
+
+        \multicolumn{2}{c}{\textbf{Dispositif interferenciels des trous d'Young || Dispositif interferenciels à élargissement des fronts d'onde}} \\ \hline
+
+        Interférences à grande distance: Dans l'hyposthèse où $M$ \textit{est à grande distance} des points $S_1$ et $S_2$& $a \ll D $ et $|x|, |y| \ll D$ \\ \hline
+        Difference de marche à grande distance dans le dispositif des trous d'Young: & $\delta_{1/2}(M) = n\dfrac{ax}{D}$ \\ \hline
+        Difference de marche à grande distance dans le montage de Frauhofer: & $\delta_{1/2}(M) = n\dfrac{ax}{f'_2}$ \\ \hline
+        Critère de brouillage par extension spatiale d'une fente source primaire, et critère de brouillage par extension spectrale de la source: & $|\Delta p|\gtrsim 1$ \\ \hline
+        Perte de contraste par élargissement angulaire de la source & $\theta_{\mathrm{source}}\simeq \dfrac{\lambda}{a}$\\ \hline
+    \end{tabular}
 \caption{Dispositif interferenciels des trous d'Young}
 \label{tab:intermichel}
 \end{table}
@@ -637,19 +636,16 @@ On se limite à des signaux lentements variables (En basse fréquence)
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
-    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
-        \toprule
-        \multicolumn{2}{c}{\textbf{Interferomètre à division d'amplitude || Dispositif interferenciels de Michelson}} \\
-        \midrule
-        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
-        \midrule
-        Difference de marche au point $M$ par l'interferomètre: & $\delta_{1/2}(M)=2ne\cos(i)$ \\
-        Intensité en un point $M$ de l'écran (Fresnel): & $\mathcal{I}(M)=\frac{I_0}{2}\left(1+\cos(\frac{2\pi}{\lambda_0}\cdot 2en\cos{i})\right)$ \\
-        Rappel: Dans les conditions de gauss, $DL_2$ : & $\cos(i)=1-\frac{i^2}{2}+\underset{{i\rightarrow 0}}{o} (i^2) \ \ \ \ \ \sin(i)=i+\underset{{i\rightarrow 0}}{o} (i^2)=\tan(i)$ \\
-        Reformulation de l'intensité en un point $M$ de l'écran dans les conditions de gauss: & $\mathcal{I}(M)=\dfrac{I_0}{2}\left[1+\cos\left(\dfrac{4\pi en}{\lambda_0}\left(1-\dfrac{1}{2}\left(\dfrac{r}{f'}\right)^2\right)\right)\right]$ \\
-        Rayon des anneaux: & $r=f'\sqrt{2\left(1-\frac{p}{p(O')}\right)}$ \\
-    \bottomrule
-\end{tabular}
+    \begin{tabular}{@{}|p{9cm}|p{10cm}@{}|}
+
+        \multicolumn{2}{c}{\textbf{Interferomètre à division d'amplitude || Dispositif interferenciels de Michelson}} \\ \hline
+
+        Difference de marche au point $M$ par l'interferomètre: & $\delta_{1/2}(M)=2ne\cos(i)$ \\ \hline
+        Intensité en un point $M$ de l'écran (Fresnel): & $\mathcal{I}(M)=\frac{I_0}{2}\left(1+\cos(\frac{2\pi}{\lambda_0}\cdot 2en\cos{i})\right)$ \\ \hline
+        Rappel: Dans les conditions de gauss, $DL_2$ : & $\cos(i)=1-\frac{i^2}{2}+\underset{{i\rightarrow 0}}{o} (i^2) \ \ \ \ \ \sin(i)=i+\underset{{i\rightarrow 0}}{o} (i^2)=\tan(i)$ \\ \hline
+        Reformulation de l'intensité en un point $M$ de l'écran dans les conditions de gauss: & $\mathcal{I}(M)=\dfrac{I_0}{2}\left[1+\cos\left(\dfrac{4\pi en}{\lambda_0}\left(1-\dfrac{1}{2}\left(\dfrac{r}{f'}\right)^2\right)\right)\right]$ \\ \hline
+        Rayon des anneaux: & $r=f'\sqrt{2\left(1-\frac{p}{p(O')}\right)}$ \\ \hline
+    \end{tabular}
 \caption{Dispositif interferenciels de Michelson}
 \label{tab:intermichel}
 \end{table}
@@ -660,40 +656,29 @@ On se limite à des signaux lentements variables (En basse fréquence)
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
-    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
-        \toprule
-        \multicolumn{2}{c}{\textbf{Introduction aux equations de la physique quantique}} \\
-        \midrule
-        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
-        \midrule
-        Energie du photon & $\mathcal{E}_{\mathrm{photon}}=\hbar \omega$ \\
-        Amplitude de protobabilité de présence & $\psi(M,t), \imag{\psi} \subset \C$ \\
-        Amplitude de protobabilité de présence & $\d P(u,t)=\psi^*(u,t)\psi(u,t)\d u=|\psi(u,t)|^2\d u$ (La dernière égalité dans le cas $u$ coordonée cartésienne)\\
-        En cartésien 1D, on écrit la densité de probabilité de présence & $\rho (u,t) = |\psi (u, t)|^2$ \\
-        La probabilité de trouver la particule dans $[a,b]$ s'écrit & $\displaystyle P(a\leq u \leq b, t) = \int_a^b \rho(u, t)\d u$ \\
-        Extension spatiale typique de la fonction d'onde & $\Delta u$ \\
-        Longueur d'onde de Broglie (à prononcer \textit{Breuil}) & $\lambda_0$ ou $\lambda_{DB}$ \\
-        Pour $u$ une variable aléatoire: & \\
-        Moyenne de $u$ (\textit{Esperance}) & $\displaystyle \av{u(t)}{\psi} =\rint u\rho (u, t)\d u$ \\
-        Moments de $u$ (\textit{Théorème de transfert}) & $\displaystyle \langle u^n(t)\rangle_{\psi} =\rint u^n\rho (u, t)\d u, \ n\in \N^*$ \\
-        Si $u$ est en cartésien: & \\
-        Extension spatiale typique de la fonction d'onde (\textit{Écart type}): & $\Delta u=\sigma(u)=\sqrt{\mathbb{V}(u)}\underset{K.H.}{=}\sqrt{\mathbb{E}(u^2)-\mathbb{E}(u)^2} = \sqrt{\langle u^2(t)\rangle_{\psi} - \langle u(t)\rangle_{\psi}^2}$ \\
-        Condition aux limites de Born & $\displaystyle \rint \rho (u, t) \d u = 1$ \\
-        Équation de Schrödinger & $i\hbar \dpv{\psi}{t} = \dfrac{-\hbar ^2}{2m}\Delta \psi+V\psi$ \\
-        Terme d'énergie cinétique de la particule & $\dfrac{-\hbar}{2m}\lap{\psi}$ \\
-        Terme lié à l'énergie potentielle & $V\psi$ \\
-        Vitesse de la particule (def) & $\av{v_x(t)}{\psi} = \displaystyle\lim_{\d t \to0} \frac{\av{x(t+\d t)}{\psi} - \av{x(t)}{\psi}}{\d t}$ \\
-        Vitesse de la particule & $\displaystyle \av{v_x(t)}{\psi} = \frac{\hbar}{im}\rint \psi^* \dpv{\psi}{x}\d x$ \\
-        Quantité de mouvement & $\displaystyle \av{p_x}{\psi}=m\av{v_x}{\psi}=\rint \psi^* \left(\frac{\hbar}{i}\right) \dpv{\psi}{x}\d x$ \\
-        Quantité de mouvement (Moment d'ordre 2) & $\displaystyle \av{p_x^2}{\psi}=\rint \psi^* \left(\frac{\hbar}{i}\right)^2 \ddpv{\psi}{x}\d x$ \\
-        Théorène d'Ehrenfest & $\dv{\av{p_x}{\psi}}{t} = -\av{\dpv{V}{x}}{\psi}$ \\
-        Dans la limite classique $\Delta x \ll \Lambda $ ($\Lambda$ l'echelle de longueur typique sur laquelle x varie, i.e. $V(x)$ peut être approché par sa tangente) & $\dv{\av{p_x}{\psi}}{t} = -\dpv{V}{x} \left(\av{x}{\psi, t}\right)$ C'est le TRD ! \\
-        Énergie cinétique & $\displaystyle \av{E_c}{\psi} = \rint \psi^* \left(\frac{-\hbar^2}{2m}\ddpv{\psi}{x}\right) \d x $\\
-        Dans l'état stationnaire & $\varphi $ \\
-        Longueur d'onde de De Broglie pour une onde (état) stationnaire & $\lambda_0 = \dfrac{h}{\sqrt{2mE}}$ \\
+    \begin{tabular}{@{}|p{9cm}|p{10cm}@{}|}
 
-        \bottomrule
-\end{tabular}
+        \multicolumn{2}{c}{\textbf{Introduction aux equations de la physique quantique}} \\ \hline
+
+        Energie du photon & $\mathcal{E}_{\mathrm{photon}}=\hbar \omega$ \\ \hline
+        Amplitude de protobabilité de présence & $\psi(M,t), \imag{\psi} \subset \C$ \\ \hline
+        Amplitude de protobabilité de présence & $\d P(u,t)=\psi^*(u,t)\psi(u,t)\d u=|\psi(u,t)|^2\d u$ (La dernière égalité dans le cas $u$ coordonée cartésienne)\\ \hline
+        En cartésien 1D, on écrit la densité de probabilité de présence & $\rho (u,t) = |\psi (u, t)|^2$ \\ \hline
+        La probabilité de trouver la particule dans $[a,b]$ s'écrit & $\displaystyle P(a\leq u \leq b, t) = \int_a^b \rho(u, t)\d u$ \\ \hline
+        Extension spatiale typique de la fonction d'onde & $\Delta u$ \\ \hline
+        Longueur d'onde de Broglie (à prononcer \textit{Breuil}) & $\lambda_0$ ou $\lambda_{DB}$ \\ \hline
+        Pour $u$ une variable aléatoire: & \\ \hline
+        Moyenne de $u$ (\textit{Esperance}) & $\displaystyle \av{u(t)}{\psi} =\rint u\rho (u, t)\d u$ \\ \hline
+        Moments de $u$ (\textit{Théorème de transfert}) & $\displaystyle \langle u^n(t)\rangle_{\psi} =\rint u^n\rho (u, t)\d u, \ n\in \N^*$ \\ \hline
+        Si $u$ est en cartésien: & \\ \hline
+        Extension spatiale typique de la fonction d'onde (\textit{Écart type}): & $\Delta u=\sigma(u)=\sqrt{\mathbb{V}(u)}\underset{K.H.}{=}\sqrt{\mathbb{E}(u^2)-\mathbb{E}(u)^2} = \sqrt{\langle u^2(t)\rangle_{\psi} - \langle u(t)\rangle_{\psi}^2}$ \\ \hline
+        Condition aux limites de Born & $\displaystyle \rint \rho (u, t) \d u = 1$ \\ \hline
+        Équation de Schrödinger & $i\hbar \dpv{\psi}{t} = \dfrac{-\hbar ^2}{2m}\Delta \psi+V\psi$ \\ \hline
+        Terme d'énergie cinétique de la particule & $\dfrac{-\hbar}{2m}\lap{\psi}$ \\ \hline
+        Terme lié à l'énergie potentielle & $V\psi$ \\ \hline
+        Vitesse de la particule (def) & $\av{v_x(t)}{\psi} = \displaystyle\lim_{\d t \to0} \frac{\av{x(t+\d t)}{\psi} - \av{x(t)}{\psi}}{\d t}$ \\ \hline
+        Vitesse de la particule & $\displaystyle \av{v_x(t)}{\psi} = \frac{\hbar}{im}\rint \psi^* \dpv{\psi}{x}\d x$ \\ \hline
+        \end{tabular}
 \caption{Introduction aux equations de la physique quantique}
 \label{tab:quantphis}
 \end{table}
@@ -704,23 +689,28 @@ On se limite à des signaux lentements variables (En basse fréquence)
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
-    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
-        \toprule
-        \multicolumn{2}{c}{\textbf{Introduction aux equations de la physique quantique (Tableau 2)}} \\
-        \midrule
-        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
-        \midrule
+    \begin{tabular}{@{}|p{9cm}|p{10cm}@{}|}
 
-    Vitesse de phase pour une propagation libre & $v_{\varphi} = \dfrac{\hbar \omega}{2m}$ \\
-    Vitesse de groupe pour une propagation libre & $v_g = \dfrac{\hbar k}{m}$ \\
-    Remarque: $v_g \neq v_\varphi$, la propagation est dispersive & \\ 
-    Inégalité de Heisenberg (Cauchy-Schwartz) & $\Delta u \Delta p_u \geqslant \dfrac{\hbar}{2}$ \\
-    Formule de diffraction pour les particules & $\Delta \sin\theta = \dfrac{\lambda_0}{a}$ \\
-    Equation locale de conservation des probabilités de présence & $\dpv{\rho}{t} + \dpv{j}{u} = 0 $ \\
-    Vecteur densité de courant de probabilité de présence & $\vec {\j} = \dfrac{1}{m}\mathrm{Re}\left(\psi^*\dfrac{\hbar}{i} \dpv{\psi}{u} \right)$ \\
-    Vecteur densité de courant de probabilité de présence pour une onde de Broglie & $\vec {\j} = \rho \av{v}{\psi} = |\psi|^2 \dfrac{\hbar \vec k}{m}$ \\
+        \multicolumn{2}{c}{\textbf{Introduction aux equations de la physique quantique (Tableau 2)}} \\ \hline
 
-\bottomrule
+
+    Quantité de mouvement & $\displaystyle \av{p_x}{\psi}=m\av{v_x}{\psi}=\rint \psi^* \left(\frac{\hbar}{i}\right) \dpv{\psi}{x}\d x$ \\ \hline 
+    Quantité de mouvement (Moment d'ordre 2) & $\displaystyle \av{p_x^2}{\psi}=\rint \psi^* \left(\frac{\hbar}{i}\right)^2 \ddpv{\psi}{x}\d x$ \\ \hline
+    Théorène d'Ehrenfest & $\dv{\av{p_x}{\psi}}{t} = -\av{\dpv{V}{x}}{\psi}$ \\ \hline
+    Dans la limite classique $\Delta x \ll \Lambda $ ($\Lambda$ l'echelle de longueur typique sur laquelle x varie, i.e. $V(x)$ peut être approché par sa tangente) & $\dv{\av{p_x}{\psi}}{t} = -\dpv{V}{x} \left(\av{x}{\psi, t}\right)$ C'est le TRD ! \\ \hline
+    Énergie cinétique & $\displaystyle \av{E_c}{\psi} = \rint \psi^* \left(\frac{-\hbar^2}{2m}\ddpv{\psi}{x}\right) \d x $\\ \hline
+    Dans l'état stationnaire & $\varphi $ \\ \hline
+    Longueur d'onde de De Broglie pour une onde (état) stationnaire & $\lambda_0 = \dfrac{h}{\sqrt{2mE}}$ \\ \hline
+
+    Vitesse de phase pour une propagation libre & $v_{\varphi} = \dfrac{\hbar \omega}{2m}$ \\ \hline
+    Vitesse de groupe pour une propagation libre & $v_g = \dfrac{\hbar k}{m}$ \\ \hline
+    Remarque: $v_g \neq v_\varphi$, la propagation est dispersive & \\ \hline 
+    Inégalité de Heisenberg (Cauchy-Schwartz) & $\Delta u \Delta p_u \geqslant \dfrac{\hbar}{2}$ \\ \hline
+    Formule de diffraction pour les particules & $\Delta \sin\theta = \dfrac{\lambda_0}{a}$ \\ \hline
+    Equation locale de conservation des probabilités de présence & $\dpv{\rho}{t} + \dpv{j}{u} = 0 $ \\ \hline
+    Vecteur densité de courant de probabilité de présence & $\vec {\j} = \dfrac{1}{m}\mathrm{Re}\left(\psi^*\dfrac{\hbar}{i} \dpv{\psi}{u} \right)$ \\ \hline
+    Vecteur densité de courant de probabilité de présence pour une onde de Broglie & $\vec {\j} = \rho \av{v}{\psi} = |\psi|^2 \dfrac{\hbar \vec k}{m}$ \\ \hline
+
 \end{tabular}
 \caption{Introduction aux equations de la physique quantique (Tableau 2)}
 \label{tab:quantphis}
@@ -732,23 +722,20 @@ Avec $\eta$ la taille du bord, $\lambda_0$ la longueur d'onde de De Broglie
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
-    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
-        \toprule
-        \multicolumn{2}{c}{\textbf{Quantas et barrieres de potentiels}} \\
-        \midrule
-        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
-        \midrule
+    \begin{tabular}{@{}|p{9cm}|p{10cm}@{}|}
 
-        Approximation sur la taille du bord & $\lambda_0 \ll \eta$ \\
-        Conditions de discontinuités & $\phi$ et $\phi'$ sont continues \\
-        Expression de la fonction d'onde, cas $E > V_0$ & $\psi(x,t) = \left\{\begin{array}{l}A_1e^{-i\frac{E}{\hbar}t}\left(e^{ik_1x} + \dfrac{k_1-k_2}{k_1+k_2}e^{ik_1x}\right) \ \text{si } x < 0\\ A_1 e^{-i\frac{E}{\hbar}t}\dfrac{2k_1}{k_1+k_2}e^{-ik_2x}\end{array}\right.$ \\
+        \multicolumn{2}{c}{\textbf{Quantas et barrieres de potentiels}} \\ \hline
+
+
+        Approximation sur la taille du bord & $\lambda_0 \ll \eta$ \\ \hline
+        Conditions de discontinuités & $\phi$ et $\phi'$ sont continues \\ \hline
+        Expression de la fonction d'onde, cas $E > V_0$ & $\psi(x,t) = \left\{\begin{array}{l}A_1e^{-i\frac{E}{\hbar}t}\left(e^{ik_1x} + \dfrac{k_1-k_2}{k_1+k_2}e^{ik_1x}\right) \ \text{si } x < 0\\ \hline A_1 e^{-i\frac{E}{\hbar}t}\dfrac{2k_1}{k_1+k_2}e^{-ik_2x}\end{array}\right.$ \\ \hline
         Expression de la fonction d'onde, cas $E < V_0$ & $\psi(x,t) = \left\{\begin{array}{l}
-        \end{array}\right.$ \\
-        Probabilité de transmission en la marche de potentiel & $T = \dfrac{||\vec{\j}_t||}{||\vec{\j}_i||}$ \\
-        Probabilité de transmission en la marche de potentiel & $R = \dfrac{||\vec{\j}_r||}{||\vec{\j}_i||}$ \\
+        \end{array}\right.$ \\ \hline
+        Probabilité de transmission en la marche de potentiel & $T = \dfrac{||\vec{\j}_t||}{||\vec{\j}_i||}$ \\ \hline
+        Probabilité de transmission en la marche de potentiel & $R = \dfrac{||\vec{\j}_r||}{||\vec{\j}_i||}$ \\ \hline
 
 
-\bottomrule
 \end{tabular}
 \caption{Quantas et barrieres de potentiels}
 \label{tab:quantpos}
@@ -760,24 +747,22 @@ Avec $\eta$ la taille du bord, $\lambda_0$ la longueur d'onde de De Broglie
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
-    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
-        \toprule
-        \multicolumn{2}{c}{\textbf{Transformations Chimiques \& acide base}} \\
-        \midrule
-        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
-        \midrule
+    \begin{tabular}{@{}|p{9cm}|p{10cm}@{}|}
 
-        Potentiel Hydrogène pour un acide fort en solution & $pH = -\log\left(\dfrac{[H_3O^+]}{c_0}\right)$ \\
-        Constante d'équilibre de la réaction d'autoprotolyse de l'eau & $2H_2 O_{(l)} \leftrightharpoons H_3O^+_{(aq)} + HO^-_{(aq)} \ \ \ \ Ke = 1.0\times10^{-14}$ \\
-        Potentiel Hydrogène pour une base forte en solution & $[H_3O^+] = \dfrac{Ke(c_0)^2}{[HO^-]}$ donc $pH = -\log\left(\dfrac{Ke(c_0)}{[HO^-]}\right)$ \\
-        Formule d'Enderson (C'est $-\log$(Gulberg \& Waage)) & $-pH = -pKa + \log\left(\dfrac{[\text{base}]}{[\text{acide}]}\right)$ \\
-        Approximation de la réaction très peu avancée & $c_0K_a \ll c_a$ \\
-        Approximation de la réaction très avancée & $c_0K_a \gg c_a$ \\
-\bottomrule
+        \multicolumn{2}{c}{\textbf{Transformations Chimiques \& acide base}} \\ \hline
+
+
+        Potentiel Hydrogène pour un acide fort en solution & $pH = -\log\left(\dfrac{[H_3O^+]}{c_0}\right)$ \\ \hline
+        Constante d'équilibre de la réaction d'autoprotolyse de l'eau & $2H_2 O_{(l)} \leftrightharpoons H_3O^+_{(aq)} + HO^-_{(aq)} \ \ \ \ Ke = 1.0\times10^{-14}$ \\ \hline
+        Potentiel Hydrogène pour une base forte en solution & $[H_3O^+] = \dfrac{Ke(c_0)^2}{[HO^-]}$ donc $pH = -\log\left(\dfrac{Ke(c_0)}{[HO^-]}\right)$ \\ \hline
+        Formule d'Enderson (C'est $-\log$(Gulberg \& Waage)) & $-pH = -pKa + \log\left(\dfrac{[\text{base}]}{[\text{acide}]}\right)$ \\ \hline
+        Approximation de la réaction très peu avancée & $c_0K_a \ll c_a$ \\ \hline
+        Approximation de la réaction très avancée & $c_0K_a \gg c_a$ \\ \hline
 \end{tabular}
 \caption{Transformations Chimiques \& acide base}
 \label{tab:chem}
 \end{table}
+
 
 \section{Annexes}
 
@@ -785,34 +770,60 @@ Avec $\eta$ la taille du bord, $\lambda_0$ la longueur d'onde de De Broglie
     \centering
     \renewcommand{\arraystretch}{1.5} % Increase row spacing
     \setlength{\tabcolsep}{8pt} % Adjust column padding
-    \begin{tabular}{@{}p{9cm}p{10cm}@{}}
-        \toprule
-        \multicolumn{2}{c}{\textbf{Quelques constantes}} \\
-        \midrule
-        \textbf{Nom de la formule} & \textbf{Expression mathématique} \\
-        \midrule
-    Constante de gravitation & $\mathcal{G} = \num{6,67e-11} \unit{\newton\meter\squared\per\kilogram\squared}$ \\ 
-    Vitesse de la lumière & $c = \num{3,00e8} \unit{\meter\per\second}$ \\ 
-    Constante de Planck & $h = \num{6,63e-34} \unit{\joule\second}$ \\ 
-    Charge élémentaire & $e = \num{1,60e-19} \unit{\coulomb}$ \\ 
-    Constante de Boltzmann & $k_B = \num{1,38e-23} \unit{\joule\per\kelvin}$ \\ 
-    Masse du proton & $m_p = \num{1,67e-27} \unit{\kilogram}$ \\ 
-    Masse de l'électron & $m_e = \num{9,11e-31} \unit{\kilogram}$ \\ 
-    Constante de permittivité du vide & $\varepsilon_0 = \num{8,85e-12} \unit{\farad\per\meter}$ \\ 
-    Constante de perméabilité du vide & $\mu_0 = {4\pi\times 10^{-7}} \unit{\henry\per\meter}$ \\ 
-    Champ de claquage de l'air sec &$ E_{\text{claquage, air sec}} = \num{10e5} \unit{\volt\per\meter}$ \\
-    Masse de la Terre & $M_\text{Terre} = \num{5,97e24} \unit{\kilogram}$ \\ 
-    Rayon moyen de la Terre & $R_\text{Terre} = \num{6,37e6} \unit{\meter}$ \\ 
-    Constante de Stefan-Boltzmann & $\sigma = \num{5,67e-8} \unit{\watt\per\meter\squared\per\kelvin^4}$ \\ 
-    Constante d'Avogadro & $N_A = \num{6,022e23} \unit{\per\mole}$ \\ 
-    Constante des gaz parfaits & $R = \num{8,31} \unit{\joule\per\mole\per\kelvin}$ \\ 
-    Masse du Soleil & $M_\odot = \num{1,989e30} \unit{\kilogram}$ \\  
-    Rayon moyen du Soleil & $R_\odot = \num{6,96e8} \unit{\meter}$ \\ 
-    K standard de la réaction d'autoprotolise de l'eau ($2H_2 O_{(l)} \leftrightharpoons H_3O^+_{(aq)} + HO^-_{(aq)}$) & $\mathrm{K}_e= \num{10e{-14}}$ \\
-    \bottomrule
+    \begin{tabular}{@{}|p{9cm}|p{10cm}@{}|}
+        \multicolumn{2}{c}{\textbf{Quelques constantes}} \\ \hline
+
+    Constante de gravitation & $\mathcal{G} = \num{6,67e-11} \unit{\newton\meter\squared\per\kilogram\squared}$ \\ \hline 
+    Vitesse de la lumière & $c = \num{3,00e8} \unit{\meter\per\second}$ \\ \hline 
+    Constante de Planck & $h = \num{6,63e-34} \unit{\joule\second}$ \\ \hline 
+    Charge élémentaire & $e = \num{1,60e-19} \unit{\coulomb}$ \\ \hline 
+    Constante de Boltzmann & $k_B = \num{1,38e-23} \unit{\joule\per\kelvin}$ \\ \hline 
+    Masse du proton & $m_p = \num{1,67e-27} \unit{\kilogram}$ \\ \hline 
+    Masse de l'électron & $m_e = \num{9,11e-31} \unit{\kilogram}$ \\ \hline 
+    Constante de permittivité du vide & $\varepsilon_0 = \num{8,85e-12} \unit{\farad\per\meter}$ \\ \hline 
+    Constante de perméabilité du vide & $\mu_0 = {4\pi\times 10^{-7}} \unit{\henry\per\meter}$ \\ \hline 
+    Champ de claquage de l'air sec &$ E_{\text{claquage, air sec}} = \num{10e5} \unit{\volt\per\meter}$ \\ \hline
+    Masse de la Terre & $M_\text{Terre} = \num{5,97e24} \unit{\kilogram}$ \\ \hline 
+    Rayon moyen de la Terre & $R_\text{Terre} = \num{6,37e6} \unit{\meter}$ \\ \hline 
+    Constante de Stefan-Boltzmann & $\sigma = \num{5,67e-8} \unit{\watt\per\meter\squared\per\kelvin^4}$ \\ \hline 
+    Constante d'Avogadro & $N_A = \num{6,022e23} \unit{\per\mole}$ \\ \hline 
+    Constante des gaz parfaits & $R = \num{8,31} \unit{\joule\per\mole\per\kelvin}$ \\ \hline 
+    Masse du Soleil & $M_\odot = \num{1,989e30} \unit{\kilogram}$ \\ \hline  
+    Rayon moyen du Soleil & $R_\odot = \num{6,96e8} \unit{\meter}$ \\ \hline 
+    K standard de la réaction d'autoprotolise de l'eau ($2H_2 O_{(l)} \leftrightharpoons H_3O^+_{(aq)} + HO^-_{(aq)}$) & $\mathrm{K}_e= \num{10e{-14}}$ \\ \hline
 \end{tabular}
 \caption{Quelques constantes physiques}
 \label{tab:constantes}
 \end{table}
-    
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Increase row spacing
+    \setlength{\tabcolsep}{8pt} % Adjust column padding
+    \begin{tabular}{@{}|p{9cm}|p{10cm}@{}|}
+        \multicolumn{2}{c}{\textbf{Formulaire d'analyse vectorielle}} \\ \hline
+        
+\end{tabular}
+\caption{Formulaire d'analyse vectorielle}
+\label{tab:anavec}
+\end{table}
+
+
+\section{Compléments X-ENS}
+
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % Increase row spacing
+    \setlength{\tabcolsep}{8pt} % Adjust column padding
+    \begin{tabular}{@{}|p{9cm}|p{10cm}@{}|}
+        \multicolumn{2}{c}{\textbf{Compléments}} \\ \hline
+        Loi de Biot et Savart & $\displaystyle\dfrac{\mu_0}{4\pi}\oint\dfrac{Id\vec{\mathscr{l}} \wedge (\vec{r} - \vec{r'})}{|\vec{r} -\vec{r'}|^3}$ \\ \hline
+\end{tabular}
+\caption{Compléments}
+\label{tab:xens}
+\end{table}
+
+
+
 \end{document}
