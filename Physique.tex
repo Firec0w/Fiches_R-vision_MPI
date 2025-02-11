@@ -697,6 +697,9 @@ On se limite à des signaux lentements variables (En basse fréquence)
 
     Quantité de mouvement & $\displaystyle \av{p_x}{\psi}=m\av{v_x}{\psi}=\rint \psi^* \left(\frac{\hbar}{i}\right) \dpv{\psi}{x}\d x$ \\ \hline 
     Quantité de mouvement (Moment d'ordre 2) & $\displaystyle \av{p_x^2}{\psi}=\rint \psi^* \left(\frac{\hbar}{i}\right)^2 \ddpv{\psi}{x}\d x$ \\ \hline
+    Énergie moyenne & $\av{E}{\psi} = \rint \psi^* \left(-\dfrac{\hbar}{i}\right)\dpv{\psi}{t}\d x$ \\ \hline
+    Énergie moyenne (Moment d'ordre 2) & $\av{E^2}{\psi} = \rint \psi^* \left(-\dfrac{\hbar}{i}\right)^2\ddpv{\psi}{t}\d x$ \\ \hline
+
     Théorène d'Ehrenfest & $\dv{\av{p_x}{\psi}}{t} = -\av{\dpv{V}{x}}{\psi}$ \\ \hline
     Dans la limite classique $\Delta x \ll \Lambda $ ($\Lambda$ l'echelle de longueur typique sur laquelle x varie, i.e. $V(x)$ peut être approché par sa tangente) & $\dv{\av{p_x}{\psi}}{t} = -\dpv{V}{x} \left(\av{x}{\psi, t}\right)$ C'est le TRD ! \\ \hline
     Énergie cinétique & $\displaystyle \av{E_c}{\psi} = \rint \psi^* \left(\frac{-\hbar^2}{2m}\ddpv{\psi}{x}\right) \d x $\\ \hline
@@ -706,7 +709,7 @@ On se limite à des signaux lentements variables (En basse fréquence)
     Vitesse de phase pour une propagation libre & $v_{\varphi} = \dfrac{\hbar \omega}{2m}$ \\ \hline
     Vitesse de groupe pour une propagation libre & $v_g = \dfrac{\hbar k}{m}$ \\ \hline
     Remarque: $v_g \neq v_\varphi$, la propagation est dispersive & \\ \hline 
-    Inégalité de Heisenberg (Cauchy-Schwartz) & $\Delta u \Delta p_u \geqslant \dfrac{\hbar}{2}$ \\ \hline
+    Inégalité de Heisenberg (Cauchy-Schwartz avec $\displaystyle \rint \left|u\psi + \hbar \lambda\dpv{\psi}{u}\right| \d u$ et SPDG $\av{u}{} = 0,\ \ \av{p_u}{} = 0$) & $\Delta u \Delta p_u \geqslant \dfrac{\hbar}{2}$ \\ \hline
     Formule de diffraction pour les particules & $\Delta \sin\theta = \dfrac{\lambda_0}{a}$ \\ \hline
     Equation locale de conservation des probabilités de présence & $\dpv{\rho}{t} + \dpv{j}{u} = 0 $ \\ \hline
     Vecteur densité de courant de probabilité de présence & $\vec {\j} = \dfrac{1}{m}\mathrm{Re}\left(\psi^*\dfrac{\hbar}{i} \dpv{\psi}{u} \right)$ \\ \hline
@@ -826,7 +829,7 @@ Avec $\eta$ la taille du bord, $\lambda_0$ la longueur d'onde de De Broglie
             Dans de nombreuses situations & $\d H_m \simeq C_m\d T = \d U_m$ \\ \hline
             Entropie molaire d'une PCII & $S_m - S_{m0} = C_{Vm}\ln\left(\dfrac{T}{T_{m0}}\right)$ \\ \hline
             ODG de l'enthalpie de vaporisation de l'eau & $h_{\text{vap, eau}} = 2 \cdot 10^3 \unit{\J\per\g}$ \\ \hline
-            Théorème de moment (En fait très visuel) & $x_g = \dfrac{v(M) - v_L}{v_G - g_L}$ \\ \hline
+            Théorème des moment (En fait très visuel) & $x_g = \dfrac{v(M) - v_L}{v_G - g_L}$ \\ \hline
         \end{tabular}
 \caption{Formules Thermodynamique (2).}
 \label{tab:thermo2}
