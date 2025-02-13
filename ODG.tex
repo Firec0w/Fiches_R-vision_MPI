@@ -1,0 +1,51 @@
+\documentclass[10pt,a4paper,titlepage,landscape]{article}
+
+\usepackage[
+    left=1cm, right=1cm, top=2cm, bottom=2cm,
+    headheight=10mm, includehead
+]{geometry}
+
+
+\usepackage{tcolorbox}
+
+
+\usepackage{fdsymbol}
+
+% tables
+\usepackage{float}
+
+\usepackage{siunitx}
+
+\begin{document}
+    \begin{tcolorbox}[colback=white,colframe=black]
+        \[\begin{array}{lcr}  \varheartsuit &  \text{Quelque constantes et ordres de grandeurs} & \varheartsuit \end{array}\]
+    \end{tcolorbox}
+
+    \begin{table}[H]
+            \centering
+            \renewcommand{\arraystretch}{1.5} % Increase row spacing
+            \setlength{\tabcolsep}{8pt} % Adjust column padding
+            \begin{tabular}{@{}|l||r|l|}
+                \multicolumn{2}{c}{Constantes} \\ \hline
+                Nom & Valeur & Unité \\ \hline \hline
+                Constante de gravitation & $\mathcal{G} = \num{6,67e-11} $ & $\unit{\newton\meter\squared\per\kilogram\squared}$ \\ \hline 
+                Vitesse de la lumière & $c = \num{3,00e8} $ & $\unit{\meter\per\second}$ \\ \hline 
+                Constante de Planck & $h = \num{6,63e-34} $ & $\unit{\joule\second}$ \\ \hline 
+                Charge élémentaire & $e = \num{1,60e-19} $ & $\unit{\coulomb}$ \\ \hline 
+                Constante de Boltzmann & $k_B = \num{1,38e-23} $ & $\unit{\joule\per\kelvin}$ \\ \hline 
+                Masse du proton & $m_p = \num{1,67e-27} $ & $\unit{\kilogram}$ \\ \hline 
+                Masse de l'électron & $m_e = \num{9,11e-31} $ & $\unit{\kilogram}$ \\ \hline 
+                Constante de permittivité du vide & $\varepsilon_0 = \num{8,85e-12} $ & $\unit{\farad\per\meter}$ \\ \hline 
+                Constante de perméabilité du vide & $\mu_0 = {4\pi\times 10^{-7}} $ & $\unit{\henry\per\meter}$ \\ \hline 
+                Champ de claquage de l'air sec &$ E_{\text{claquage, air sec}} = \num{10e5} $ & $\unit{\volt\per\meter}$ \\ \hline
+                Masse de la Terre & $M_\text{Terre} = \num{5,97e24} $ & $\unit{\kilogram}$ \\ \hline 
+                Rayon moyen de la Terre & $R_\text{Terre} = \num{6,37e6} $ & $\unit{\meter}$ \\ \hline 
+                Constante de Stefan-Boltzmann & $\sigma = \num{5,67e-8} $ & $\unit{\watt\per\meter\squared\per\kelvin^4}$ \\ \hline 
+                Constante d'Avogadro & $N_A = \num{6,022e23} $ & $\unit{\per\mole}$ \\ \hline 
+                Constante des gaz parfaits & $R = \num{8,31} $ & $\unit{\joule\per\mole\per\kelvin}$ \\ \hline 
+                Masse du Soleil & $M_\odot = \num{1,989e30} $ & $\unit{\kilogram}$ \\ \hline  
+                Rayon moyen du Soleil & $R_\odot = \num{6,96e8} $ & $\unit{\meter}$ \\ \hline
+                K standard de la réaction d'autoprotolise de l'eau ($2H_2 O_{(l)} \leftrightharpoons H_3O^+_{(aq)} + HO^-_{(aq)}$) & $\mathrm{K}_e= \num{10e{-14}}$ & \\ \hline
+            \end{tabular}
+    \end{table}
+\end{document}
