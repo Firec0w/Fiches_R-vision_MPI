@@ -1,4 +1,9 @@
-\documentclass[10pt,a4paper,twocolumn,landscape]{article}
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[
+    left=2cm, right=2cm, top=2cm, bottom=2cm,
+    headheight=10mm, includehead
+]{geometry}
 
 \usepackage[utf8]{inputenc} % UTF-8 encoding
 \usepackage[T1]{fontenc} % Proper font encoding for European languages
@@ -8,6 +13,34 @@
 \usepackage{amsmath, amsfonts, amssymb}
 
 \usepackage{tcolorbox}
+
+\tcbset {
+  base/.style={
+    arc=0mm, 
+    bottomtitle=0.5mm,
+    boxrule=0mm,
+    colbacktitle=black!10!white, 
+    coltitle=black, 
+    fonttitle=\bfseries, 
+    left=2.5mm,
+    leftrule=1mm,
+    right=3.5mm,
+    title={#1},
+    toptitle=0.75mm, 
+  }
+}
+
+\definecolor{brandblue}{rgb}{0.34, 0.7, 1}
+\newtcolorbox{mainbox}[1]{
+  colframe=brandblue, 
+  base={#1}
+}
+
+\newtcolorbox{subbox}[1]{
+  colframe=black!30!white,
+  base={#1}
+}
+
 \usepackage{fdsymbol}
 \usepackage{float}
 \usepackage{siunitx}
@@ -28,9 +61,16 @@
 \fancyhead[C]{\thetitle}
 \fancyhead[R]{Année 2024-2025}
 
+\begin{mainbox}{Définition}
+    \begin{itemize}
+        \item Un \textit{réducteur} est une espèce caable de \textit{céder} un ou plusieurs éléctrons
+        \item Un \textit{oxidant} est un epèce capable de \textit{capter} un ou plusieurs éléctrons 
+    \end{itemize}
+\end{mainbox}
+
 \begin{center}{\large \bf Ajustage d'une demi-équation éléctronique}\end{center}
 
-\begin{tcolorbox}[colback=white,colframe=black]
+\begin{subbox}{Ajustage d'une demi-équation éléctronique}
     \begin{enumerate}
         \item Assurer la conservation des éléments autres que $\ch{H}$ et  $\ch{O}$
         \item Assurer la conservation de l'élément en ajoutant de l'eau $\ch{H2O_{(l)}}$
@@ -38,6 +78,6 @@
         \item Assurer la conservation des charges en ajoutant des $e^-$
         \item Si le milieu est basique, ajouter autant d'$\ch{HO^-_{(aq)}}$ qu'il y a déjà d'$\ch{H^+_{(aq)}}$ et remplacer les paires $\ch{HO^-_{(aq)} + H^+_{(aq)}}$ par $\ch{H2O_{(l)}}$
     \end{enumerate}    
-\end{tcolorbox}
+\end{subbox}
 
 \end{document}
