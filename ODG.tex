@@ -1,51 +1,114 @@
-\documentclass[10pt,a4paper,titlepage,landscape]{article}
+\documentclass[10pt,a4paper]{article}
 
+\usepackage{lmodern} % Modern font
 \usepackage[
-    left=1cm, right=1cm, top=2cm, bottom=2cm,
-    headheight=10mm, includehead
+    left=1.5cm, right=1.5cm, top=2cm, bottom=2cm
 ]{geometry}
 
-
 \usepackage{tcolorbox}
-
-
-\usepackage{fdsymbol}
-
-% tables
+\tcbuselibrary{skins} % Enhanced styling for tcolorbox
+\usepackage{booktabs} % Improved table rules
+\usepackage{xcolor,colortbl} % Alternating row colors
+\usepackage{siunitx} % SI units
+\usepackage{fdsymbol} % Symbols
+\usepackage{wasysym} % Moon symbol
 \usepackage{float}
+\usepackage{tabularx}
+\usepackage{calc}
 
-\usepackage{siunitx}
+\usepackage[compact]{titlesec}
+\titlespacing*{\section} {0pt}{2.5ex plus 1ex minus .2ex}{1.3ex plus .2ex}
+\titleformat{\section}[block]{\color{black}\Large\it\filcenter}{}{1em}{}
+
+\usepackage{titling}
+\usepackage{fancyhdr}
 
 \begin{document}
-    \begin{tcolorbox}[colback=white,colframe=black]
-        \[\begin{array}{lcr}  \varheartsuit &  \text{Quelque constantes et ordres de grandeurs} & \varheartsuit \end{array}\]
-    \end{tcolorbox}
+\title{Constantes fondamentales et ordres de grandeur}
 
-    \begin{table}[H]
-            \centering
-            \renewcommand{\arraystretch}{1.5} % Increase row spacing
-            \setlength{\tabcolsep}{8pt} % Adjust column padding
-            \begin{tabular}{@{}|l||r|l|}
-                \multicolumn{2}{c}{Constantes} \\ \hline
-                Nom & Valeur & Unité \\ \hline \hline
-                Constante de gravitation & $\mathcal{G} = \num{6,67e-11} $ & $\unit{\newton\meter\squared\per\kilogram\squared}$ \\ \hline 
-                Vitesse de la lumière & $c = \num{3,00e8} $ & $\unit{\meter\per\second}$ \\ \hline 
-                Constante de Planck & $h = \num{6,63e-34} $ & $\unit{\joule\second}$ \\ \hline 
-                Charge élémentaire & $e = \num{1,60e-19} $ & $\unit{\coulomb}$ \\ \hline 
-                Constante de Boltzmann & $k_B = \num{1,38e-23} $ & $\unit{\joule\per\kelvin}$ \\ \hline 
-                Masse du proton & $m_p = \num{1,67e-27} $ & $\unit{\kilogram}$ \\ \hline 
-                Masse de l'électron & $m_e = \num{9,11e-31} $ & $\unit{\kilogram}$ \\ \hline 
-                Constante de permittivité du vide & $\varepsilon_0 = \num{8,85e-12} $ & $\unit{\farad\per\meter}$ \\ \hline 
-                Constante de perméabilité du vide & $\mu_0 = {4\pi\times 10^{-7}} $ & $\unit{\henry\per\meter}$ \\ \hline 
-                Champ de claquage de l'air sec &$ E_{\text{claquage, air sec}} = \num{10e5} $ & $\unit{\volt\per\meter}$ \\ \hline
-                Masse de la Terre & $M_\text{Terre} = \num{5,97e24} $ & $\unit{\kilogram}$ \\ \hline 
-                Rayon moyen de la Terre & $R_\text{Terre} = \num{6,37e6} $ & $\unit{\meter}$ \\ \hline 
-                Constante de Stefan-Boltzmann & $\sigma = \num{5,67e-8} $ & $\unit{\watt\per\meter\squared\per\kelvin^4}$ \\ \hline 
-                Constante d'Avogadro & $N_A = \num{6,022e23} $ & $\unit{\per\mole}$ \\ \hline 
-                Constante des gaz parfaits & $R = \num{8,31} $ & $\unit{\joule\per\mole\per\kelvin}$ \\ \hline 
-                Masse du Soleil & $M_\odot = \num{1,989e30} $ & $\unit{\kilogram}$ \\ \hline  
-                Rayon moyen du Soleil & $R_\odot = \num{6,96e8} $ & $\unit{\meter}$ \\ \hline
-                K standard de la réaction d'autoprotolise de l'eau ($2H_2 O_{(l)} \leftrightharpoons H_3O^+_{(aq)} + HO^-_{(aq)}$) & $\mathrm{K}_e= \num{10e{-14}}$ & \\ \hline
-            \end{tabular}
-    \end{table}
+\pagestyle{fancy}
+\fancyhead{}
+
+\fancyhead[L]{\scshape Lycée Louis le Grand}
+\fancyhead[C]{Constantes et ordres de grandeur}
+\fancyhead[R]{\scshape Année 2024-2025}
+
+\author{}
+\date{}
+
+\section*{Constantes fondamentales}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.3} % Espacement des lignes
+    \setlength{\tabcolsep}{10pt} % Espacement des colonnes
+    \arrayrulecolor{gray} % Couleur des lignes de tableau
+    \rowcolors{2}{gray!15}{white} % Alternance des couleurs
+    \caption{Principales constantes physiques}
+    \begin{tabularx}{\linewidth}{@{} X r X @{}}
+        \toprule
+        \textbf{Nom} & \textbf{Valeur} & \textbf{Unité} \\
+        \midrule
+        Constante de gravitation & \num{6.67e-11} & $\unit{\newton\meter\squared\per\kilogram\squared}$ \\
+        Vitesse de la lumière & \num{3.00e8} & $\unit{\meter\per\second}$ \\
+        Constante de Planck & \num{6.63e-34} & $\unit{\joule\second}$ \\
+        Constante de Boltzmann & \num{1.38e-23} & $\unit{\joule\per\kelvin}$ \\
+        Permittivité du vide & \num{8.85e-12} & $\unit{\farad\per\meter}$ \\
+        Perméabilité du vide & $4\pi\times 10^{-7}$ & $\unit{\henry\per\meter}$ \\
+        Champ de claquage de l'air sec & \num{10e5} & $\unit{\volt\per\meter}$ \\
+        Constante de Stefan-Boltzmann & \num{5.67e-8} & $\unit{\watt\per\meter\squared\per\kelvin^4}$ \\
+        Constante d'Avogadro & \num{6.022e23} & $\unit{\per\mole}$ \\
+        Constante des gaz parfaits & \num{8.31} & $\unit{\joule\per\mole\per\kelvin}$ \\
+        Coefficient de Laplace $\gamma$ & $\gamma \simeq 1.4$ & \\
+        K standard, autoprotolyse de l'eau & \num{10e-14} & \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\section*{Propriétés des particules élémentaires}
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.3} % Espacement des lignes
+    \setlength{\tabcolsep}{10pt} % Espacement des colonnes
+    \arrayrulecolor{gray} % Couleur des lignes de tableau
+    \rowcolors{2}{gray!15}{white} % Alternance des couleurs
+    \caption{Caractéristiques des particules élémentaires}
+    \begin{tabularx}{\linewidth-4ex}{@{} X r X @{}}
+        \toprule
+        \textbf{Nom} & \textbf{Valeur} & \textbf{Unité} \\
+        \midrule
+        Charge élémentaire & \num{1.60e-19} & $\unit{\coulomb}$ \\
+        Masse du proton & \num{1.67e-27} & $\unit{\kilogram}$ \\
+        Masse du neutron & \num{1.68e-27} & $\unit{\kilogram}$ \\
+        Masse de l'électron & \num{9.11e-31} & $\unit{\kilogram}$ \\
+        Rayon du proton & \num{0.84e-15} & $\unit{\meter}$ \\
+        Rayon du neutron & \num{0.8e-15} & $\unit{\meter}$ \\
+        Rayon de l'électron & \num{2.82e-15} & $\unit{\meter}$ \\  
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\section*{Paramètres astronomiques}
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.3} % Espacement des lignes
+    \setlength{\tabcolsep}{10pt} % Espacement des colonnes
+    \arrayrulecolor{gray} % Couleur des lignes de tableau
+    \rowcolors{2}{gray!15}{white} % Alternance des couleurs
+    \caption{Caractéristiques astronomiques principales}
+    \begin{tabularx}{\linewidth-4ex}{@{} X r X @{}}
+        \toprule
+        \textbf{Nom} & \textbf{Valeur} & \textbf{Unité} \\
+        \midrule
+        Constante de gravitation & \num{6.67e-11} & $\unit{\newton\meter\squared\per\kilogram\squared}$ \\
+        Masse de la Terre & \num{5.97e24} & $\unit{\kilogram}$ \\
+        Rayon moyen de la Terre & \num{6.37e6} & $\unit{\meter}$ \\
+        Masse du Soleil & \num{1.989e30} & $\unit{\kilogram}$ \\
+        Rayon moyen du Soleil & \num{6.96e8} & $\unit{\meter}$ \\
+        Masse de la Lune & \num{7.35e22} & $\unit{\kilogram}$ \\
+        Rayon moyen de la Lune & \num{1.74e6} & $\unit{\meter}$ \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
 \end{document}
