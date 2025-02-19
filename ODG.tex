@@ -36,7 +36,6 @@
 \author{}
 \date{}
 
-\section*{Constantes fondamentales}
 
 \begin{table}[H]
     \centering
@@ -45,27 +44,25 @@
     \arrayrulecolor{gray} % Couleur des lignes de tableau
     \rowcolors{2}{gray!15}{white} % Alternance des couleurs
     \caption{Principales constantes physiques}
-    \begin{tabularx}{\linewidth}{@{} X r X @{}}
+    \begin{tabularx}{\linewidth}{@{} X r r X @{}}
         \toprule
-        \textbf{Nom} & \textbf{Valeur} & \textbf{Unité} \\
+        \textbf{Nom} & \textbf{Symbole} & \textbf{Valeur} & \textbf{Unité} \\
         \midrule
-        Constante de gravitation & \num{6.67e-11} & $\unit{\newton\meter\squared\per\kilogram\squared}$ \\
-        Vitesse de la lumière & \num{3.00e8} & $\unit{\meter\per\second}$ \\
-        Constante de Planck & \num{6.63e-34} & $\unit{\joule\second}$ \\
-        Constante de Boltzmann & \num{1.38e-23} & $\unit{\joule\per\kelvin}$ \\
-        Permittivité du vide & \num{8.85e-12} & $\unit{\farad\per\meter}$ \\
-        Perméabilité du vide & $4\pi\times 10^{-7}$ & $\unit{\henry\per\meter}$ \\
-        Champ de claquage de l'air sec & \num{10e5} & $\unit{\volt\per\meter}$ \\
-        Constante de Stefan-Boltzmann & \num{5.67e-8} & $\unit{\watt\per\meter\squared\per\kelvin^4}$ \\
-        Constante d'Avogadro & \num{6.022e23} & $\unit{\per\mole}$ \\
-        Constante des gaz parfaits & \num{8.31} & $\unit{\joule\per\mole\per\kelvin}$ \\
-        Coefficient de Laplace $\gamma$ & $\gamma \simeq 1.4$ & \\
-        K standard, autoprotolyse de l'eau & \num{10e-14} & \\
+        Vitesse de la lumière & $c$ & \num{3.00e8} & $\unit{\meter\per\second}$ \\
+        Constante de Planck & $h$ & \num{6.63e-34} & $\unit{\joule\second}$ \\
+        Constante de Boltzmann & $k_B$ & \num{1.38e-23} & $\unit{\joule\per\kelvin}$ \\
+        Permittivité du vide & $\varepsilon_0$ & \num{8.85e-12} & $\unit{\farad\per\meter}$ \\
+        Perméabilité du vide & $\mu_0 $& $4\pi\times 10^{-7}$ & $\unit{\henry\per\meter}$ \\
+        Champ de claquage de l'air sec & & \num{10e5} & $\unit{\volt\per\meter}$ \\
+        Constante de Stefan-Boltzmann & $\sigma$ & \num{5.67e-8} & $\unit{\watt\per\meter\squared\per\kelvin^4}$ \\
+        Constante d'Avogadro & $N_A$ & \num{6.022e23} & $\unit{\per\mole}$ \\
+        Constante des gaz parfaits & $R$ & \num{8.31} & $\unit{\joule\per\mole\per\kelvin}$ \\
+        Coefficient de Laplace & $\gamma$& $\gamma \simeq 1.4$ & \\
+        K standard, autoprotolyse de l'eau & & \num{10e-14} & \\
         \bottomrule
     \end{tabularx}
 \end{table}
 
-\section*{Propriétés des particules élémentaires}
 \begin{table}[H]
     \centering
     \renewcommand{\arraystretch}{1.3} % Espacement des lignes
@@ -73,22 +70,21 @@
     \arrayrulecolor{gray} % Couleur des lignes de tableau
     \rowcolors{2}{gray!15}{white} % Alternance des couleurs
     \caption{Caractéristiques des particules élémentaires}
-    \begin{tabularx}{\linewidth-4ex}{@{} X r X @{}}
+    \begin{tabularx}{\linewidth-4ex}{@{} X r r X @{}}
         \toprule
-        \textbf{Nom} & \textbf{Valeur} & \textbf{Unité} \\
+        \textbf{Nom} & \textbf{Symbole} & \textbf{Valeur} & \textbf{Unité} \\
         \midrule
-        Charge élémentaire & \num{1.60e-19} & $\unit{\coulomb}$ \\
-        Masse du proton & \num{1.67e-27} & $\unit{\kilogram}$ \\
-        Masse du neutron & \num{1.68e-27} & $\unit{\kilogram}$ \\
-        Masse de l'électron & \num{9.11e-31} & $\unit{\kilogram}$ \\
-        Rayon du proton & \num{0.84e-15} & $\unit{\meter}$ \\
-        Rayon du neutron & \num{0.8e-15} & $\unit{\meter}$ \\
-        Rayon de l'électron & \num{2.82e-15} & $\unit{\meter}$ \\  
+        Charge élémentaire & e & \num{1.60e-19} & $\unit{\coulomb}$ \\
+        Masse du proton && \num{1.67e-27} & $\unit{\kilogram}$ \\
+        Masse du neutron && \num{1.68e-27} & $\unit{\kilogram}$ \\
+        Masse de l'électron &$m_e$& \num{9.11e-31} & $\unit{\kilogram}$ \\
+        Rayon du proton && \num{0.84e-15} & $\unit{\meter}$ \\
+        Rayon du neutron && \num{0.8e-15} & $\unit{\meter}$ \\
+        Rayon de l'électron && \num{2.82e-15} & $\unit{\meter}$ \\  
         \bottomrule
     \end{tabularx}
 \end{table}
 
-\section*{Paramètres astronomiques}
 \begin{table}[H]
     \centering
     \renewcommand{\arraystretch}{1.3} % Espacement des lignes
@@ -96,19 +92,103 @@
     \arrayrulecolor{gray} % Couleur des lignes de tableau
     \rowcolors{2}{gray!15}{white} % Alternance des couleurs
     \caption{Caractéristiques astronomiques principales}
-    \begin{tabularx}{\linewidth-4ex}{@{} X r X @{}}
+    \begin{tabularx}{\linewidth-4ex}{@{} X r r X @{}}
         \toprule
-        \textbf{Nom} & \textbf{Valeur} & \textbf{Unité} \\
+        \textbf{Nom} & \textbf{Symbole} & \textbf{Valeur} & \textbf{Unité} \\
         \midrule
-        Constante de gravitation & \num{6.67e-11} & $\unit{\newton\meter\squared\per\kilogram\squared}$ \\
-        Masse de la Terre & \num{5.97e24} & $\unit{\kilogram}$ \\
-        Rayon moyen de la Terre & \num{6.37e6} & $\unit{\meter}$ \\
-        Masse du Soleil & \num{1.989e30} & $\unit{\kilogram}$ \\
-        Rayon moyen du Soleil & \num{6.96e8} & $\unit{\meter}$ \\
-        Masse de la Lune & \num{7.35e22} & $\unit{\kilogram}$ \\
-        Rayon moyen de la Lune & \num{1.74e6} & $\unit{\meter}$ \\
+        Constante de gravitation &G& \num{6.67e-11} & $\unit{\newton\meter\squared\per\kilogram\squared}$ \\
+        Masse de la Terre && \num{5.97e24} & $\unit{\kilogram}$ \\
+        Rayon moyen de la Terre && \num{6.37e6} & $\unit{\meter}$ \\
+        Masse du Soleil && \num{1.989e30} & $\unit{\kilogram}$ \\
+        Rayon moyen du Soleil && \num{6.96e8} & $\unit{\meter}$ \\
+        Masse de la Lune && \num{7.35e22} & $\unit{\kilogram}$ \\
+        Rayon moyen de la Lune && \num{1.74e6} & $\unit{\meter}$ \\
+        Distance Terre-lune && \num{3.8e8} & $\unit{m}$ \\
+        Distance Terre-soleil && \num{1.5e11} & $\unit{m}$ \\
         \bottomrule
     \end{tabularx}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.3} 
+    \setlength{\tabcolsep}{10pt} 
+    \arrayrulecolor{gray} 
+    \rowcolors{2}{gray!15}{white} 
+    \caption{Indices optiques de matériaux classiques}
+    \begin{tabularx}{\linewidth-4ex}{@{} X X l @{}}
+        \toprule
+        \textbf{Matériau} & \textbf{Indice optique ($n$)} \\
+        \midrule
+        Vide & 1.0000 \\
+        Air & 1.0003  \\
+        Eau & 1.333  \\
+        Verre (courant) & 1.5  \\
+        Quartz & 1.46  \\
+        Diamant & 2.42  \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.3} 
+    \setlength{\tabcolsep}{10pt} 
+    \arrayrulecolor{gray} 
+    \rowcolors{2}{gray!15}{white} 
+    \caption{Plage de fréquences et longueurs d'onde du spectre visible et audible}
+    \begin{tabularx}{\linewidth-4ex}{@{} X r r X @{}}
+        \toprule
+        \textbf{Domaine} & \textbf{Fréquence} & \textbf{Longueur d’onde} & \textbf{Unité} \\
+        \midrule
+        Lumière visible (violet) & \num{7.5e14} & \num{400} & \unit{\nano\meter} \\
+        Lumière visible (rouge) & \num{4.3e14} & \num{700} & \unit{\nano\meter} \\
+        Son audible (grave) & \num{20} & \num{17} & \unit{\meter} \\
+        Son audible (aigu) & \num{20e3} & \num{1.7e-2} & \unit{\meter} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.3} 
+    \setlength{\tabcolsep}{10pt} 
+    \arrayrulecolor{gray} 
+    \rowcolors{2}{gray!15}{white} 
+    \caption{Champ magnétique et électrique terrestre}
+    \begin{tabularx}{\linewidth-4ex}{@{} X r X @{}}
+        \toprule
+        \textbf{Paramètre} & \textbf{Valeur} & \textbf{Unité} \\
+        \midrule
+        Champ magnétique terrestre & \num{30} - \num{60} & \unit{\micro\tesla} \\
+        Champ électrique terrestre (sol-air) & \num{100} - \num{300} & \unit{\volt\per\meter} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.3} % Espacement des lignes
+    \setlength{\tabcolsep}{10pt} % Espacement des colonnes
+    \arrayrulecolor{gray} % Couleur des lignes de tableau
+    \rowcolors{2}{gray!15}{white} % Alternance des couleurs
+    \caption{Caractéristiques des différentes sources lumineuses}
+    \begin{tabularx}{\linewidth}{@{} X r c c c c X @{}}
+        \hline
+        \textbf{Source} & \(\lambda_m\) (nm) & \(\Delta\lambda\) (nm) & \(\tau_c\) (s) & \(l_c\) (m) & \(\tau_c / T_m\) \\
+        \hline
+        Laser rouge (TP) & \(\simeq 630\) & \(10^{-6} \text{ à } 10^{-3}\) & \(10^{-9} \text{ à } 10^{-6}\) & \(0,1 \text{ à } 1\) ``Un bras'' & \(10^7 \text{ à } 10^{10}\) \\
+        \hline
+        Raie verte du mercure & 546 & \(10^{-3} \text{ à } 1\) & \(10^{-12} \text{ à } 10^{-9}\) & \(10^{-4} \text{ à } 0,1\) & \(10^3 \text{ à } 10^6\) \\
+        \hline
+        Lumière blanche filtrée (filtre interférentiel) & \(\simeq 500\) & qques nm & \(10^{-13}\) & \(10^{-4}\) & \(\simeq 100\) \\
+        \hline
+        Lumière blanche filtrée (filtre gélatine) & \(\simeq 500\) & qques 10 nm & \(10^{-14}\) & \(10^{-5}\) & \(\simeq 10\) \\
+        \hline
+        Lumière blanche & \(\simeq 500\) & qques 100 nm & \(10^{-15}\) & \(10^{-6}\) & \(\simeq 1\) \\
+        \hline
+    \end{tabularx}
+    \label{tab:source_lumineuse}
 \end{table}
 
 \end{document}
