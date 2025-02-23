@@ -16,6 +16,9 @@
 \usepackage{tabularx}
 \usepackage{calc}
 
+\usepackage{ocgx2} %implements PDF Layers
+\usepackage{hyperref}
+
 \usepackage[compact]{titlesec}
 \titlespacing*{\section} {0pt}{2.5ex plus 1ex minus .2ex}{1.3ex plus .2ex}
 \titleformat{\section}[block]{\color{black}\Large\it\filcenter}{}{1em}{}
@@ -23,7 +26,26 @@
 \usepackage{titling}
 \usepackage{fancyhdr}
 
+\let\oldunit\unit
+\renewcommand{\unit}[1]
+{
+    \begin{ocg}{Units}{units}{on}
+        \oldunit{#1}
+    \end{ocg}
+}
+
+\let\oldnum\num
+\renewcommand{\num}[1]
+{
+    \begin{ocg}{Values}{vals}{on}
+        \oldnum{#1}
+    \end{ocg}
+}
+
+
 \begin{document}
+Montrer/Cacher les \switchocg{vals}{valeurs}/ \switchocg{units}{unités} 
+    
 \title{Constantes fondamentales et ordres de grandeur}
 
 \pagestyle{fancy}
@@ -35,8 +57,6 @@
 
 \author{}
 \date{}
-
-
 \begin{table}[H]
     \centering
     \renewcommand{\arraystretch}{1.3} % Espacement des lignes
@@ -108,6 +128,9 @@
         \bottomrule
     \end{tabularx}
 \end{table}
+
+\newpage
+Montrer/Cacher les \switchocg{vals}{valeurs}/ \switchocg{units}{unités} 
 
 \begin{table}[H]
     \centering
