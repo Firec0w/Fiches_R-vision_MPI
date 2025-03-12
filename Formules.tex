@@ -848,7 +848,17 @@ Avec $\eta$ la taille du bord, $\lambda_0$ la longueur d'onde de De Broglie
         Equation de la chaleur & $\dpv{T}{t} = D\Delta T + \dfrac{p_{th}}{\rho c}, \ \ \ \ (\Delta \text{ le laplacien})$ \\ \hline
         Coefficient de diffusion thermique & $D = \dfrac{\lambda}{\rho c}$ \\ \hline
         durée typique du régime transitoire & $\tau = \dfrac{L^2}{D}$ \\ \hline
-\end{tabular}
+        Hypothèses pour l'utilisation de résistances thermiques & $\begin{matrix} (1) & \text{Les champs sont independants du temps} \\ (2) & \text{Unidimensionnel} \\ (3) & \text{Pas de sources au sein des materiaux} \\ (4) & \text{Sans pertes thermiques latérales} \end{matrix}$ \\ \hline
+        Resistance Thermique & $R_\text{th} = \dfrac{T_1 - T_2}{\Phi_{1\to 2}}$ \ en \unit{\K\per\W} \\ \hline
+        Assiociation série, parallèle & $R_{\text{eq, série}} = R_1 + R_2 \ \ \ R_{\text{eq, parallèle}} = \dfrac{1}{\frac{1}{R_1} + \frac{1}{R_2}}$ \\ \hline
+        Loi de Newton & $\vec{j_{\text{th}}} = h \left(T_p - T_f\right) \vec{n_{\text{p} \to \text{f}}}$ \ \ \ $h$ : Coef. de conducto-convetion \\ \hline
+        Lien Newton-Fourier & $h = \dfrac{\lambda}{\delta}$, \ \ $\delta$ la longueur de la couche conducto-convective \\ \hline
+        Flux éléctromagnétiques & $\Phi_{\text{incident}} = \Phi_{\text{réfléchi}} + \Phi_{\text{transmi}} + \Phi_{\text{absorbé}}$ \\ \hline
+        Corps parfaitement transparent & $\Phi_{\text{réfléchi}} = \Phi_{\text{transmi}} = 0$ \\ \hline
+        Corps parfaitement réfléchissant & $\Phi_{\text{transmi}} = \Phi_{\text{absorbé}} = 0$ \\ \hline
+        Flux radiatif & $\Phi_{\text{radiatif}} = \Phi_{\text{émis}} - \Phi_{\text{asborbé}}$ \\ \hline 
+        Corps noir & $\Phi_{\text{abosrbé}} = \Phi_{\text{incident}}$ \\ \hline
+    \end{tabular}
 \caption{Transferts Thermiques}
 \label{tab:constantes}
 \end{table}
